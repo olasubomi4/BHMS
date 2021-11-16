@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHMS</title>
+
+    <link rel="stylesheet" href="~/Content/app.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
+    <script src="https://unpkg.com/scrollreveal@4.0.0-beta.6"></script>
+
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="top-menu  scroll-reveal">
+                    <div class="menu">
+                        <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
+                            <button class="menu-icon dark" type="button" data-toggle="main-nav"></button>
+                            <div class="title-bar-title">Menu</div>
+                        </div>
+
+                        <nav id="main-nav" data-animate="menu-in menu-out">
+                            <ul class="main-navigation">
+                                <li>@Html.ActionLink("Home", "Index", "Home", htmlAttributes: new { @class = "m-anim" })</li>
+                                <li>@Html.ActionLink("Sign Up", "SignUp", "Home", htmlAttributes: new { @class = "m-anim" })</li>
+                                <li><a class="m-anim" href="#about-us" data-text="About">About</a></li>
+                                <li><a class="m-anim" href="#contact-us" data-text="Contact">Contact</a></li>
+                                @Html.Partial("_LoginPartial")
+                            </ul>
+                            
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+
+            <div class="a-slide slide2">
+                <div class="container">
+                    <div class="bottom-section">
+                        <h1 class="header-txt"></h1>
+
+                    </div>
+                    <!--.bottom-section-->
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Group26</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.2/what-input.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.js"></script>
+       <script src="~/Scripts/app.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+    <script type="text/javascript">
+        $('.slider').slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 3500,
+            arrows: false,
+            fade: true,
+            cssEase: 'linear'
+        });
+
+    </script>
+
+    <script>
+        $(window).on('load', function () {
+            $("#preloader").fadeOut();
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
