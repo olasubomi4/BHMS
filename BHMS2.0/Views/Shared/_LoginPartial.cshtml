@@ -8,6 +8,7 @@
         <nav id="main-nav" data-animate="menu-in menu-out">
             <ul class="main-navigation">
                 <li>
+
                     @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
                 </li>
                 <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>

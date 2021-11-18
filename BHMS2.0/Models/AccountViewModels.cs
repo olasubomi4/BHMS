@@ -79,6 +79,25 @@ namespace BHMS2._0.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Matric Number")]
+        public string MatricNo { get; set; }
+
+        [Required, Display(Name = "Firstname")]
+        public string Firstname { get; set; }
+
+        [Required, Display(Name = "Lastname")]
+        public string Lastname { get; set; }
+
+        [Required, Display(Name = "Course")]
+        public string Course { get; set; }
+
+        [Required, Display(Name = "Level")]
+        public string Level { get; set; }
+
+        [Required, Display(Name = "Phonenumber")]
+        public string Phonenumber { get; set; }
     }
 
     public class ResetPasswordViewModel
