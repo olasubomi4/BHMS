@@ -29,6 +29,8 @@
                             <ul class="main-navigation">
                                 <li>@Html.ActionLink("Home", "Index", "Home", htmlAttributes: new { @class = "m-anim" })</li>
                                 <li>@Html.ActionLink("Sign Up", "SignUp", "Home", htmlAttributes: new { @class = "m-anim" })</li>
+                                <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
+                                <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
                                 <li><a class="m-anim" href="#about-us" data-text="About">About</a></li>
                                 <li><a class="m-anim" href="#contact-us" data-text="Contact">Contact</a></li>
                                 @Html.Partial("_LoginPartial")

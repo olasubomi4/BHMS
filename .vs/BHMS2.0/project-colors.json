@@ -5,7 +5,22 @@
       "ProjectGuid": "919f649d-0643-41b6-9798-20670dd25176",
       "DisplayName": "BHMS2.0",
       "ColorIndex": 0
+    },
+    "cc4e3374-2a7a-4ec4-8ff9-2fde71ce38e8": {
+      "ProjectGuid": "cc4e3374-2a7a-4ec4-8ff9-2fde71ce38e8",
+      "DisplayName": "BHMS.CORE",
+      "ColorIndex": 1
+    },
+    "b876f015-f78c-4c17-865a-79ab56917215": {
+      "ProjectGuid": "b876f015-f78c-4c17-865a-79ab56917215",
+      "DisplayName": "BHMS.InMemory",
+      "ColorIndex": 2
+    },
+    "a5184e7f-6d14-4eb0-b883-33da50bf8a4d": {
+      "ProjectGuid": "a5184e7f-6d14-4eb0-b883-33da50bf8a4d",
+      "DisplayName": "BHMS.SQL",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 4
 }
