@@ -11,9 +11,7 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Color)
         </th>
@@ -23,9 +21,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Image)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -37,18 +33,14 @@
     <td>
         <img class="img-thumbnail" style="height:50px" src="~/Content/ItemImages/@item.Image" />
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CreatedAt)
-    </td>
+
     <td>
         @Html.DisplayFor(modelItem => item.Color)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.SerialNumber)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Image)
-    </td>
+    
     <td>
         @Html.DisplayFor(modelItem => item.Category)
     </td>

@@ -184,7 +184,7 @@ namespace BHMS2._0.Controllers
             var result = await UserManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
-
+      
         //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
