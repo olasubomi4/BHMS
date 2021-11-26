@@ -1,6 +1,7 @@
 ﻿using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
 using BHMS.CORE.ViewModels;
+using BHMS2._0.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +13,7 @@ namespace BHMS2._0.Controllers
 {
     public class ItemManagerController : Controller
     {
+      
         IRepository<Item> context;
         IRepository<ItemCategory> itemCategories;
 
@@ -19,18 +21,27 @@ namespace BHMS2._0.Controllers
         {
             context = itemContext;
             itemCategories = itemCategoryContext;
+            
         }
         // GET: ProductManager
+        [Authorize]
         public ActionResult Index()
         {
             List<Item> items = context.Collection().ToList();
-            return View(items);
+            var itemss  = from t in items
+                            where t.user == User.Identity.Name //if you are using a string guid, otherwise remove ToString()
+                            select t;
+
+            return View(itemss);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
+
             ItemManagerViewModel viewModel = new ItemManagerViewModel();
             viewModel.Item = new Item();
+            viewModel.Item.user = User.Identity.Name;
             viewModel.ItemCategories = itemCategories.Collection();
 
 
@@ -49,7 +60,7 @@ namespace BHMS2._0.Controllers
             {
                 if (file != null)
                 {
-
+                    item.user = User.Identity.Name;
                     item.Image = item.Id + Path.GetExtension(file.FileName);
                     file.SaveAs(Server.MapPath("//Content//ItemImages//") + item.Image);
                 }
@@ -60,7 +71,7 @@ namespace BHMS2._0.Controllers
                 return RedirectToAction("index");
             }
         }
-
+        [Authorize]
         public ActionResult Edit(string Id)
         {
             Item item = context.Find(Id);
@@ -117,6 +128,7 @@ namespace BHMS2._0.Controllers
 
             }
         }
+        [Authorize]
         public ActionResult Delete(string Id)
         {
             Item itemToDelete = context.Find(Id);

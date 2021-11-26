@@ -1,5 +1,6 @@
 ﻿using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,18 +18,21 @@ namespace BHMS2._0.Controllers
             this.context = context;
         }
         // GET: ProductManager
+        [Authorize]
         public ActionResult Index()
         {
+
             List<ItemCategory> itemCategories = context.Collection().ToList();
             return View(itemCategories);
         }
-
+        [Authorize]
         public ActionResult Create()
         {
             ItemCategory itemCategory = new ItemCategory();
+            
             return View(itemCategory);
         }
-
+       
         [HttpPost]
         public ActionResult Create(ItemCategory itemCategory)
         {
@@ -45,7 +49,7 @@ namespace BHMS2._0.Controllers
             }
 
         }
-
+        [Authorize]
         public ActionResult Edit(string Id)
         {
             ItemCategory itemCategory = context.Find(Id);
@@ -82,7 +86,7 @@ namespace BHMS2._0.Controllers
                 return RedirectToAction("Index");
             }
         }
-
+        [Authorize]
         public ActionResult Delete(string Id)
         {
             ItemCategory itemCategoryToDelete = context.Find(Id);

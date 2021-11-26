@@ -44,6 +44,7 @@
     <Compile Include="Contract\IRepository.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,5 +11,7 @@ namespace BHMS.CORE.ViewModels
     {
         public Item Item { get; set; }
         public IEnumerable<ItemCategory> ItemCategories { get; set; }
+
+       
     }
 }

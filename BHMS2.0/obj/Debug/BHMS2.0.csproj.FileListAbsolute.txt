@@ -300,3 +300,5 @@ C:\Users\olasubomi\Source\Repos\BHMS new\BHMS2.0\bin\Twilio.dll
 C:\Users\olasubomi\Source\Repos\BHMS new\BHMS2.0\bin\Microsoft.IdentityModel.Tokens.xml
 C:\Users\olasubomi\Source\Repos\BHMS new\BHMS2.0\bin\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\olasubomi\Source\Repos\BHMS new\BHMS2.0\bin\Twilio.xml
+C:\Users\olasubomi\Source\Repos\BHMS new\BHMS2.0\bin\BHMS.InMemory.dll
+C:\Users\olasubomi\Source\Repos\BHMS new\BHMS2.0\bin\BHMS.InMemory.pdb

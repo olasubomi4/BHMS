@@ -405,6 +405,10 @@
       <Project>{CC4E3374-2A7A-4EC4-8FF9-2FDE71CE38E8}</Project>
       <Name>BHMS.CORE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BHMS.InMemory\BHMS.InMemory.csproj">
+      <Project>{B876F015-F78C-4C17-865A-79AB56917215}</Project>
+      <Name>BHMS.InMemory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BHMS.SQL\BHMS.SQL.csproj">
       <Project>{A5184E7F-6D14-4EB0-B883-33DA50BF8A4D}</Project>
       <Name>BHMS.SQL</Name>
