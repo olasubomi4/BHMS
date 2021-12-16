@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "UploadImage";
+}
+
+<h2>UploadImage</h2>
+
+@if (ViewBag.Result == "OK")
+{
+    <h2>Your upload was successful</h2>
+}
+else
+{
+    <h2>Your upload was unsuccessful</h2>
+}
+
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>
+
