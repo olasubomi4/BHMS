@@ -1,0 +1,14 @@
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\BHMS.SQL.dll.config
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\BHMS.SQL.dll
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\BHMS.SQL.pdb
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\BHMS.CORE.dll
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\EntityFramework.dll
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\BHMS.CORE.pdb
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\EntityFramework.xml
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\obj\Debug\BHMS.SQL.csproj.AssemblyReference.cache
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\obj\Debug\BHMS.SQL.csproj.CoreCompileInputs.cache
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\obj\Debug\BHMS.SQL.csproj.CopyComplete
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\obj\Debug\BHMS.SQL.dll
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.SQL\obj\Debug\BHMS.SQL.pdb

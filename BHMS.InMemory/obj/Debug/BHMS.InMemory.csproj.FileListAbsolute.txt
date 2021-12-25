@@ -1,0 +1,9 @@
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\bin\Debug\BHMS.InMemory.dll
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\bin\Debug\BHMS.InMemory.pdb
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\bin\Debug\BHMS.CORE.dll
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\bin\Debug\BHMS.CORE.pdb
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\obj\Debug\BHMS.InMemory.csproj.AssemblyReference.cache
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\obj\Debug\BHMS.InMemory.csproj.CoreCompileInputs.cache
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\obj\Debug\BHMS.InMemory.csproj.CopyComplete
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\obj\Debug\BHMS.InMemory.dll
+C:\Users\olasubomi\Source\Repos\BHMS25THH\BHMS.InMemory\obj\Debug\BHMS.InMemory.pdb
