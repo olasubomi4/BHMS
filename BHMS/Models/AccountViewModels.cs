@@ -96,6 +96,9 @@ namespace BHMS.Models
 
         [Required, Display(Name = "Level")]
         public int Level { get; set; }
+
+        [Required, Display(Name = "Phonenumber")]
+        public string Phonenumber { get; set; }
     }
 
     public class ResetPasswordViewModel

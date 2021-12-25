@@ -1,12 +1,13 @@
+using BHMS;
 using System.Linq;
 using System.Web.Mvc;
 
 using Unity.AspNet.Mvc;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(BHMS2._0.UnityMvcActivator), nameof(BHMS2._0.UnityMvcActivator.Start))]
-[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(BHMS2._0.UnityMvcActivator), nameof(BHMS2._0.UnityMvcActivator.Shutdown))]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(BHMS.UnityMvcActivator), nameof(BHMS.UnityMvcActivator.Start))]
+[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(BHMS.UnityMvcActivator), nameof(BHMS.UnityMvcActivator.Shutdown))]
 
-namespace BHMS2._0
+namespace BHMS
 {
     /// <summary>
     /// Provides the bootstrapping for integrating Unity with ASP.NET MVC.

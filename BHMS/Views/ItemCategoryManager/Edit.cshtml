@@ -1,4 +1,6 @@
 ﻿@model BHMS.CORE.Models.ItemCategory
+<link rel="stylesheet" href="~/assets/regPage/fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="~/assets/regPage/css/styleReg.css">
 
 @{
     ViewBag.Title = "Edit Item Category";
@@ -10,7 +12,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>ItemCategory</h4>
         <hr />

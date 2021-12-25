@@ -10,6 +10,12 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+
+using System.Configuration;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
+using System.Diagnostics;
 using BHMS.Models;
 
 namespace BHMS
@@ -18,8 +24,10 @@ namespace BHMS
     {
         public Task SendAsync(IdentityMessage message)
         {
+           
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
+        
         }
     }
 
@@ -27,6 +35,21 @@ namespace BHMS
     {
         public Task SendAsync(IdentityMessage message)
         {
+            var accountSid = ConfigurationManager.AppSettings["SMSAccountIdentification"];
+            var authToken = ConfigurationManager.AppSettings["SMSAccountPassword"];
+            var fromNumber = ConfigurationManager.AppSettings["SMSAccountFrom"];
+
+            TwilioClient.Init(accountSid, authToken);
+
+            MessageResource result = MessageResource.Create(
+            new PhoneNumber(message.Destination),
+            from: new PhoneNumber(fromNumber),
+            body: message.Body
+            );
+
+            //Status is one of Queued, Sending, Sent, Failed or null if the number is not valid
+            Trace.TraceInformation(result.Status.ToString());
+            //Twilio doesn't currently have an async API, so return success.
             // Plug in your SMS service here to send a text message.
             return Task.FromResult(0);
         }

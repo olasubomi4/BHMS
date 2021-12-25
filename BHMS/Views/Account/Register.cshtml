@@ -41,13 +41,18 @@
                     @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @placeholder = "Confirm Password" } })
                     @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
 
+
+                    @Html.EditorFor(model => model.Phonenumber, new { htmlAttributes = new { @placeholder = "Confirm Password" } })
+                    @Html.ValidationMessageFor(model => model.Phonenumber, "", new { @class = "text-danger" })
+
+
                     @*<div class="select-list">
-                            <select name="course_type" id="course_type">
-                                <option slected value="">Course of Study</option>
-                                <option value="society">Society</option>
-                                <option value="language">Language</option>
-                            </select>
-                        </div>*@
+            <select name="course_type" id="course_type">
+                <option slected value="">Course of Study</option>
+                <option value="society">Society</option>
+                <option value="language">Language</option>
+            </select>
+        </div>*@
                 </div>
                 <div class="form-check">
                     <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />

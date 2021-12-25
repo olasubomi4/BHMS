@@ -1,13 +1,11 @@
 ﻿using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
 using Microsoft.AspNet.Identity;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace BHMS2._0.Controllers
+namespace BHMS.Controllers
 {
     public class ItemCategoryManagerController : Controller
     {

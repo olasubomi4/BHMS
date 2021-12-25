@@ -1,7 +1,7 @@
 ﻿using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
 using BHMS.CORE.ViewModels;
-using BHMS2._0.Models;
+using BHMS.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BHMS2._0.Controllers
+namespace BHMS.Controllers
 {
     public class ItemManagerController : Controller
     {

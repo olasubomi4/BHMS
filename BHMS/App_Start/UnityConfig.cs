@@ -1,14 +1,13 @@
+using BHMS.Controllers;
 using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
-using BHMS.InMemory;
 using BHMS.SQL;
-using BHMS2._0.Controllers;
 using System;
 
 using Unity;
 using Unity.Injection;
 
-namespace BHMS2._0
+namespace BHMS
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.
