@@ -168,8 +168,15 @@ namespace BHMS.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+<<<<<<< HEAD:BHMS/Controllers/AccountController.cs
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
+=======
+
+
+                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    
+>>>>>>> 1.ItemManagement:BHMS2.0/Controllers/AccountController.cs
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -224,7 +231,7 @@ namespace BHMS.Controllers
             var result = await UserManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
-
+      
         //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
