@@ -1,0 +1,73 @@
+﻿@model BHMS.Models.RegisterViewModel
+
+
+<link rel="stylesheet" href="~/assets/regPage/fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="~/assets/regPage/css/styleReg.css">
+
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "appointment-form", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="main">
+
+        <div class="containerr">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <h2>Registration Form</h2>
+                <div class="form-group-1">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @placeholder = "Firstname" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @placeholder = "Lastname" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.MatricNo, new { htmlAttributes = new { @placeholder = "Matric Number" } })
+                    @Html.ValidationMessageFor(model => model.MatricNo, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.Course, new { htmlAttributes = new { @placeholder = "Course of Study" } })
+                    @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.Level, new { htmlAttributes = new { @placeholder = "Level" } })
+                    @Html.ValidationMessageFor(model => model.Level, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @placeholder = "Password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @placeholder = "Confirm Password" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+                    @*<div class="select-list">
+                            <select name="course_type" id="course_type">
+                                <option slected value="">Course of Study</option>
+                                <option value="society">Society</option>
+                                <option value="language">Language</option>
+                            </select>
+                        </div>*@
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" class="submit" value="Sign-up" />
+                </div>
+        </div>
+
+    </div>
+}
+<!-- JS -->
+<script src="~/assets/regPage/vendor/jquery/jquery.min.js"></script>
+<script src="~/assets/regPage/js/mainReg.js"></script>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
