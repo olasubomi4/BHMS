@@ -9,6 +9,10 @@ using Microsoft.Owin.Security;
 using BHMS.Models;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
+using System.IO;
+using System.Collections.Generic;
+using BHMS.CORE.Contract;
+using BHMS.CORE.Models;
 
 namespace BHMS.Controllers
 {
@@ -16,6 +20,12 @@ namespace BHMS.Controllers
     public class ManageController : Controller
     {
 
+        IRepository<VidUpload> context;
+
+        public ManageController(IRepository<VidUpload> vidcontext)
+        {
+            context = vidcontext;
+        }
         public static Cloudinary cloudinary;
 
         public const string CloudName = "df68mnbrt";
@@ -109,17 +119,30 @@ namespace BHMS.Controllers
             return RedirectToAction("ManageLogins", new { Message = message });
         }
 
-        //Image upload
-        public ActionResult UploadImage()
+        //Video upload
+
+        [HttpGet]
+        public ActionResult UploadVideo()
         {
-            VidUpload model = new VidUpload();
+            VidUpload vidUpload = new VidUpload();
+
+
+           
+
+            return View(vidUpload);
+        }
+
+        public ActionResult UploadVideo(VidUpload vidupload,HttpPostedFileBase file)
+        {
+           
+           
             Account account = new Account(CloudName, APIKey, APISecret);
             cloudinary = new Cloudinary(account);
             cloudinary.Api.Secure = true;
 
-            var uploadParams = new ImageUploadParams()
+            /*var uploadParams = new ImageUploadParams()
             {
-                File = new FileDescription(@"C:\Users\yuung\Pictures\ronny.png")
+                File = new FileDescription(@"C:\Users\yuung\Downloads\cruisin.jpg")
             };
 
             var uploadResult = cloudinary.Upload(uploadParams).StatusCode;
@@ -132,9 +155,73 @@ namespace BHMS.Controllers
             else
             {
                 return HttpNotFound();
+            }*/
+
+            /*var uploadParams = new VideoUploadParams()
+            {
+                File = new FileDescription(@"C:\Users\yuung\Downloads\apex.mp4"),
+                PublicId = "",
+                EagerTransforms = new List<Transformation>()
+                {
+                    new EagerTransformation().Width(300).Height(300).Crop("pad").AudioCodec("none"),
+                    new EagerTransformation().Width(160).Height(100).Crop("crop").Gravity("south").AudioCodec("none"),
+                },
+                EagerAsync = true,
+                EagerNotificationUrl = "https://mysite.example.com/my_notification_endpoint"
+                
+            };*/
+
+            try
+            {
+                if (file.ContentLength > 0)
+                {
+                    string _FileName = Path.GetFileName(file.FileName);
+                    string _path = Path.Combine(Server.MapPath("~/assets/img/uploadedImgs"), _FileName);
+                    file.SaveAs(_path);
+
+                    var uploadParams = new VideoUploadParams()
+                    {
+                        File = new FileDescription(_path),
+                        PublicId = $"bhms/students/items/{_FileName}",
+                        Overwrite = true,
+                        NotificationUrl = "https://mysite.example.com/my_notification_endpoint"
+                    };
+
+                    var uploadResult = cloudinary.Upload(uploadParams).StatusCode;
+                    var uploadResultt = cloudinary.Upload(uploadParams).SecureUrl;
+                   
+                    vidupload.UploadURl = uploadResultt.ToString();
+                    if (vidupload != null)
+                    {
+                        vidupload.UploadResult = uploadResult.ToString();
+                        ViewBag.Result = vidupload.UploadResult;
+                        return View();
+
+                    }
+                    else
+                    {
+                        return HttpNotFound();
+                    }
+                    context.Insert(vidupload);
+                    context.Commit();
+                }
+                
+                ViewBag.Message = "File Uploaded Successfully!!";
+
+                
+                return View();
+            }
+            catch
+            {
+                ViewBag.Message = "File upload failed!!";
+                return View();
             }
 
+
+
+
         }
+
 
         //
         // GET: /Manage/AddPhoneNumber

@@ -271,7 +271,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\VidUpload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -563,9 +562,12 @@
     <Content Include="Views\ItemManager\Delete.cshtml" />
     <Content Include="Views\ItemManager\Edit.cshtml" />
     <Content Include="Views\ItemManager\index.cshtml" />
+    <Content Include="Views\Manage\UploadVideo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\img\uploadedImgs\" />
+    <Folder Include="Content\ItemImages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

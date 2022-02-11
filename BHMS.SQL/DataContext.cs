@@ -20,8 +20,9 @@ namespace BHMS.SQL
 
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemCategory> ItemCategories { get; set; }
+        public DbSet<VidUpload> vidupload { get; set; }
 
-        
+
     }
 
     internal sealed class Configuration : DbMigrationsConfiguration<DataContext>

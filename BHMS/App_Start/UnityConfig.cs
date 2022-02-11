@@ -50,6 +50,7 @@ namespace BHMS
 
             container.RegisterType<IRepository<Item>, SQLRepository<Item>>();
             container.RegisterType<IRepository<ItemCategory>, SQLRepository<ItemCategory>>();
+            container.RegisterType<IRepository<VidUpload>, SQLRepository<VidUpload>>();
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
         }
