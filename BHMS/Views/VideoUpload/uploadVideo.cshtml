@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "uploadVideo";
+}
+
+<h2>uploadVideo</h2>
+<br />
+<br />
+<br />
+
+@using (Html.BeginForm("UploadVideo", "VideoUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+        <input type="submit" value="Upload" />
+        @{
+            if (ViewBag.Result == "OK")
+            {
+                <p>Your video has been uploaded successfully!</p>
+            }
+        }
+    </div>
+}

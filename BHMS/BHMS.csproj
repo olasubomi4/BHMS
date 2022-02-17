@@ -265,6 +265,7 @@
     <Compile Include="Controllers\ItemManagerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\VideoUploadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -562,12 +563,13 @@
     <Content Include="Views\ItemManager\Delete.cshtml" />
     <Content Include="Views\ItemManager\Edit.cshtml" />
     <Content Include="Views\ItemManager\index.cshtml" />
-    <Content Include="Views\Manage\UploadVideo.cshtml" />
+    <Content Include="Views\VideoUpload\uploadVideo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\img\uploadedImgs\" />
     <Folder Include="Content\ItemImages\" />
+    <Folder Include="Views\Video\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
