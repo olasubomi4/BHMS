@@ -41,21 +41,19 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li>@Html.ActionLink("Home", "Index", "Home", htmlAttributes: new { @class = "active" })</li>
-                <li>@Html.Partial("_LoginPartial")</li>
                 <li>@Html.ActionLink("About", "Index", "Home")</li>
+                
 
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li>@Html.ActionLink("Profile", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-
-                    <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
-                    <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
-
                     if (User.IsInRole("Admin"))
                     {
                         <li class="dropdown">
                             <a href="#"><span>Options</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
+                                <li>@Html.ActionLink("Profile", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                                <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
+                                <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
                                 <li>@Html.ActionLink("View Role", "Index", "Role")</li>
                                 <li>@Html.ActionLink("Assign role", "RegisterRole", "Account")</li>
                                 <li>@Html.ActionLink("Create Role", "Create", "Role")</li>
@@ -79,7 +77,7 @@
                 @*<li><a href="portfolio.html">Portfolio</a></li>*@
 
 
-                <li><a href="contact.html">Contact Us</a></li>
+                @*<li><a href="contact.html">Contact Us</a></li>*@
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

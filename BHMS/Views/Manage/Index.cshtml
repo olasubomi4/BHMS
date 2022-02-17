@@ -3,6 +3,8 @@
     ViewBag.Title = "Manage";
 }
 
+<br /><br /><br /><br />
+
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
@@ -29,12 +31,12 @@
             @Html.ActionLink("Manage", "ManageLogins") ]
         </dd>
         @*
-            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+        Phone Numbers can used as a second factor of verification in a two-factor authentication system.
 
-             See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+         See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+            for details on setting up this ASP.NET application to support two-factor authentication using SMS.
 
-             Uncomment the following block after you have set up two-factor authentication
+         Uncomment the following block after you have set up two-factor authentication
         *@
 
         <dt>Phone Number:</dt>
@@ -75,10 +77,49 @@
                 }
             }
         </dd>
-        </dd>
-    </dl>
+        @if (User.Identity.IsAuthenticated)
+        {
+                <dt>BHMS OPTIONS:</dt>
+                <dd>
+                    <nav id="navbar" class="navbar">
+                        <ul>
+                            
+                            <li class="dropdown">
+                                <a href="#"><span style="color: black">Options</span> <i class="bi bi-chevron-down" style="color:black"></i></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
+                                    <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
+
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
+                                        <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
+                                        <li>@Html.ActionLink("View Role", "Index", "Role")</li>
+                                        <li>@Html.ActionLink("Assign role", "RegisterRole", "Account")</li>
+                                        <li>@Html.ActionLink("Create Role", "Create", "Role")</li>
+                                        <li>@Html.ActionLink("Roles", "Index", "Role")</li>
+                                        <li class="dropdown">
+                                            <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                            <ul>
+                                                <li><a href="#">Deep Drop Down 1</a></li>
+                                                <li><a href="#">Deep Drop Down 2</a></li>
+                                                <li><a href="#">Deep Drop Down 3</a></li>
+                                                <li><a href="#">Deep Drop Down 4</a></li>
+                                                <li><a href="#">Deep Drop Down 5</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </dd>
+            
+        }
+            </dl>
 </div>
 
 
 
-@Html.ActionLink("Upload Image", "UploadImage", "Manage")
+@Html.ActionLink("Upload Video", "UploadVideo", "VideoUpload")
