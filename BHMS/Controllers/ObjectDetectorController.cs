@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using BHMS.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -6,8 +7,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 
@@ -26,7 +25,7 @@ namespace BHMS.Controllers
         {
             return View();
         }
-       
+
         public ActionResult ObjectDetector()
         {
             var apiUrl = "https://api.videoindexer.ai";
@@ -52,7 +51,7 @@ namespace BHMS.Controllers
             var content = new MultipartFormDataContent();
             Debug.WriteLine("Uploading...");
             // get the video from URL
-            var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1644533035/bhms/students/items/2022-02-05 17-18-32.mkv.mkv"; // replace with the video URL
+            var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1645188566/bhms/students/items/IMG_5709.MOV.mov"; // replace with the video URL
 
             // as an alternative to specifying video URL, you can upload a file.
             // remove the videoUrl parameter from the query string below and add the following lines:
@@ -60,14 +59,14 @@ namespace BHMS.Controllers
             //byte[] buffer = new byte[video.Length];
             //video.Read(buffer, 0, buffer.Length);
             //content.Add(new ByteArrayContent(buffer));
-
-            var uploadRequestResult = client.PostAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos?accessToken={accountAccessToken}&name=some_name&description=some_description&privacy=private&partition=some_partition&videoUrl={videoUrl}", content).Result;
+            var name = "laptop";
+            var uploadRequestResult = client.PostAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos?accessToken={accountAccessToken}&name={name}&description=some_description&privacy=private&partition=some_partition&videoUrl={videoUrl}", content).Result;
             var uploadResult = uploadRequestResult.Content.ReadAsStringAsync().Result;
 
             // get the video id from the upload result
             var videoId = JsonConvert.DeserializeObject<dynamic>(uploadResult)["id"];
             Debug.WriteLine("Uploaded");
-            
+
 
             // obtain video access token
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
@@ -85,7 +84,15 @@ namespace BHMS.Controllers
                 var videoGetIndexResult = videoGetIndexRequestResult.Content.ReadAsStringAsync().Result;
 
                 var processingState = JsonConvert.DeserializeObject<dynamic>(videoGetIndexResult)["state"];
+
+
                 
+                DetectedModels deserializedDetectedModels = JsonConvert.DeserializeObject<DetectedModels>(videoGetIndexResult);
+                
+                dynamic stuff = JsonConvert.DeserializeObject(videoGetIndexResult);
+
+                string nme = stuff.summarizedInsights.name;
+
 
                 Debug.WriteLine("");
                 Debug.WriteLine("State:");
@@ -96,8 +103,10 @@ namespace BHMS.Controllers
                 {
                     Debug.WriteLine("");
                     Debug.WriteLine("Full JSON:");
-                   
-                    ViewBag.k= processingState;
+
+                    
+
+                    ViewBag.k = videoGetIndexResult;
                     break;
                 }
             }
@@ -114,9 +123,6 @@ namespace BHMS.Controllers
             var insightsWidgetLink = insightsWidgetRequestResult.Headers.Location;
             Debug.WriteLine("Insights Widget url:");
             Debug.WriteLine(insightsWidgetLink);
-           
-
-
 
             // get player widget url
             var playerWidgetRequestResult = client.GetAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos/{videoId}/PlayerWidget?accessToken={videoAccessToken}").Result;
