@@ -14,6 +14,8 @@ namespace BHMS.Controllers
 {
     public class ObjectDetectorController : Controller
     {
+        private const int V = 8;
+
         //    // GET: ObjectDetector
         //    IRepository<ObjectDetector> context;
 
@@ -86,12 +88,10 @@ namespace BHMS.Controllers
                 var processingState = JsonConvert.DeserializeObject<dynamic>(videoGetIndexResult)["state"];
 
 
-                
-                DetectedModels deserializedDetectedModels = JsonConvert.DeserializeObject<DetectedModels>(videoGetIndexResult);
-                
-                dynamic stuff = JsonConvert.DeserializeObject(videoGetIndexResult);
 
-                string nme = stuff.summarizedInsights.name;
+              
+                
+
 
 
                 Debug.WriteLine("");
@@ -106,7 +106,28 @@ namespace BHMS.Controllers
 
                     
 
-                    ViewBag.k = videoGetIndexResult;
+                    dynamic stuff = JsonConvert.DeserializeObject(videoGetIndexResult);
+
+
+
+
+                    SummarizedInsights deserializedDetectedModels = JsonConvert.DeserializeObject<SummarizedInsights>(videoGetIndexResult);
+
+                    
+              
+                    var blogPosts = stuff.summarizedInsights.labels;
+                   
+                    dynamic blogPost = blogPosts[8];
+                    string title = blogPost.name;
+                   
+                    var a=JsonConvert.DeserializeObject<dynamic>(blogPosts)[0];
+                  
+
+                    string nmee = stuff.summarizedInsights.labels.name;
+                   
+                    
+
+
                     break;
                 }
             }
