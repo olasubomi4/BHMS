@@ -87,11 +87,7 @@ namespace BHMS.Controllers
 
 
                 
-                DetectedModels deserializedDetectedModels = JsonConvert.DeserializeObject<DetectedModels>(videoGetIndexResult);
                 
-                dynamic stuff = JsonConvert.DeserializeObject(videoGetIndexResult);
-
-                string nme = stuff.summarizedInsights.name;
 
 
                 Debug.WriteLine("");
@@ -107,6 +103,18 @@ namespace BHMS.Controllers
                     
 
                     ViewBag.k = videoGetIndexResult;
+                    DetectedModels deserializedDetectedModels = JsonConvert.DeserializeObject<DetectedModels>(videoGetIndexResult);
+
+                    dynamic stuff = JsonConvert.DeserializeObject(videoGetIndexResult);
+
+                    string nme = stuff.summarizedInsights.name;
+
+                    var eat = deserializedDetectedModels.labels;
+
+                    foreach (var item in eat)
+                    {
+                        ViewBag.showitem = item;
+                    }
                     break;
                 }
             }
