@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BHMS",
+    "\\BHMS\\Controllers"
   ],
-  "SelectedNode": "\\BHMS.sln",
+  "SelectedNode": "\\BHMS\\Controllers\\ObjectDetectorController.cs",
   "PreviewInSolutionExplorer": false
 }

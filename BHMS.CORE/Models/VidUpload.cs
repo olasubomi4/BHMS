@@ -13,6 +13,9 @@ namespace BHMS.CORE.Models
         public string UploadResult { get; set; }
         public string UploadURl { get; set; }
 
+        public string Uploadtumb { get; set; }
+         
+
         
 
 

@@ -24,7 +24,11 @@ namespace BHMS.Controllers
         // GET: VideoUpload
         public ActionResult Index()
         {
+
+
             List<VidUpload> vidUpload = context.Collection().ToList();
+
+
             return View(vidUpload);
         }
 
@@ -33,6 +37,7 @@ namespace BHMS.Controllers
         public const string CloudName = "df68mnbrt";
         public const string APIKey = "125432585352169";
         public const string APISecret = "dRY6pDVTdhV101t0y5Oby4mmA8Q";
+
 
         [HttpGet]
         public ActionResult uploadVideo()
@@ -48,6 +53,7 @@ namespace BHMS.Controllers
             Account account = new Account(CloudName, APIKey, APISecret);
             cloudinary = new Cloudinary(account);
             cloudinary.Api.Secure = true;
+
 
             /*var uploadParams = new ImageUploadParams()
             {
@@ -93,20 +99,28 @@ namespace BHMS.Controllers
                         File = new FileDescription(_path),
                         PublicId = $"bhms/students/items/{_FileName}",
                         Overwrite = true,
-                        NotificationUrl = "https://mysite.example.com/my_notification_endpoint"
+                        NotificationUrl =  "https://mysite.example.com/my_notification_endpoint"
                     };
 
                     var uploadResult = cloudinary.Upload(uploadParams).StatusCode;
                     var uploadResultt = cloudinary.Upload(uploadParams).SecureUrl;
+                   
 
 
 
                     vidupload.UploadURl = uploadResultt.ToString();
+                    var uploadResultThumbnail = uploadResultt.ToString();
+                    uploadResultThumbnail = uploadResultThumbnail.Remove(uploadResultThumbnail.Length - 4);
+                    uploadResultThumbnail = uploadResultThumbnail.Insert(uploadResultThumbnail.Length, ".jpg"); 
+                    vidupload.Uploadtumb=uploadResultThumbnail;
+
+
 
                     if (vidupload != null)
                     {
                         vidupload.UploadResult = uploadResult.ToString();
                         ViewBag.Result = vidupload.UploadResult;
+
                         
                         context.Insert(vidupload);
                         context.Commit();
