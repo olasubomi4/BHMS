@@ -63,7 +63,7 @@ namespace BHMS.Controllers
                 var content = new MultipartFormDataContent();
                 Debug.WriteLine("Uploading...");
                 // get the video from URL
-                var videoUrl = videoToinvesigate.UploadURl; // replace with the video URL
+                var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1645188566/bhms/students/items/IMG_5709.MOV.mov"; // replace with the video URL
 
                 // as an alternative to specifying video URL, you can upload a file.
                 // remove the videoUrl parameter from the query string below and add the following lines:
@@ -81,7 +81,6 @@ namespace BHMS.Controllers
 
 
                 // obtain video access token
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
                 var videoTokenRequestResult = client.GetAsync($"{apiUrl}/auth/{location}/Accounts/{accountId}/Videos/{videoId}/AccessToken?allowEdit=true").Result;
                 var videoAccessToken = videoTokenRequestResult.Content.ReadAsStringAsync().Result.Replace("\"", "");
 
@@ -114,18 +113,30 @@ namespace BHMS.Controllers
 
 
                         SummarizedInsights deserializedDetectedModels = JsonConvert.DeserializeObject<SummarizedInsights>(videoGetIndexResult);
+                        string f = "";
+                        double confidence = 0.00;
 
-
-
-                        var blogPosts = stuff.summarizedInsights.labels;
-
-                        dynamic blogPost = blogPosts[0];
-                        string title = blogPost.name;
                         
-                        var a = JsonConvert.DeserializeObject<dynamic>(blogPosts)[0];
+                        var blogPosts = stuff.summarizedInsights.labels;
+                        foreach (dynamic d in blogPosts)
+                        {
+                            if (d.name == videoToinvesigate.ItemName)
+
+                                f = d.name;
+                                confidence = d.appearances.confidence;
 
 
-                        string nmee = stuff.summarizedInsights.labels.name;
+
+                        }
+                      
+                            
+                        
+
+                           
+                        
+                     
+
+
 
                         break;
                     }
