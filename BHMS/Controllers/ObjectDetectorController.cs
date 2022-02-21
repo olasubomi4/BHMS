@@ -41,10 +41,9 @@ namespace BHMS.Controllers
             {
 
                 var apiUrl = "https://api.videoindexer.ai";
-                var accountId = "b957b20c-a572-407d-83cc-26f69f597c3a";
+                var accountId = "b5832b6d-62f5-40a8-b1a4-956c57fcb81c";
                 var location = "trial"; // replace with the account's location, or with “trial” if this is a trial account
-                var apiKey = "6758c8d19c1742f48f8323afe02e1331";
-
+                var apiKey = "fd053c46333e4bfd92c447c53fa06053";
                 System.Net.ServicePointManager.SecurityProtocol = System.Net.ServicePointManager.SecurityProtocol | System.Net.SecurityProtocolType.Tls12;
 
                 // create the http client
@@ -63,7 +62,9 @@ namespace BHMS.Controllers
                 var content = new MultipartFormDataContent();
                 Debug.WriteLine("Uploading...");
                 // get the video from URL
-                var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1645188566/bhms/students/items/IMG_5709.MOV.mov"; // replace with the video URL
+
+                var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1644533035/bhms/students/items/2022-02-05 17-18-32.mkv.mkv";
+                    //videoToinvesigate.UploadURl; // replace with the video URL
 
                 // as an alternative to specifying video URL, you can upload a file.
                 // remove the videoUrl parameter from the query string below and add the following lines:
@@ -75,12 +76,12 @@ namespace BHMS.Controllers
                 var uploadRequestResult = client.PostAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos?accessToken={accountAccessToken}&name={videoToinvesigate.ItemName}&description={videoToinvesigate.ItemDescription}&privacy=private&partition=some_partition&videoUrl={videoUrl}", content).Result;
                 var uploadResult = uploadRequestResult.Content.ReadAsStringAsync().Result;
 
-                // get the video id from the upload result
                 var videoId = JsonConvert.DeserializeObject<dynamic>(uploadResult)["id"];
                 Debug.WriteLine("Uploaded");
 
 
                 // obtain video access token
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
                 var videoTokenRequestResult = client.GetAsync($"{apiUrl}/auth/{location}/Accounts/{accountId}/Videos/{videoId}/AccessToken?allowEdit=true").Result;
                 var videoAccessToken = videoTokenRequestResult.Content.ReadAsStringAsync().Result.Replace("\"", "");
 
@@ -114,16 +115,30 @@ namespace BHMS.Controllers
 
                         SummarizedInsights deserializedDetectedModels = JsonConvert.DeserializeObject<SummarizedInsights>(videoGetIndexResult);
                         string f = "";
-                        double confidence = 0.00;
+                        double confidence = 0.00 ;
+                        string startTime = "";
+                        string endTime = "";
 
-                        
+
+
+
                         var blogPosts = stuff.summarizedInsights.labels;
                         foreach (dynamic d in blogPosts)
                         {
                             if (d.name == videoToinvesigate.ItemName)
 
                                 f = d.name;
-                                confidence = d.appearances.confidence;
+                                
+                                dynamic stufff =d.appearances;
+                                
+                                foreach (dynamic g in stufff)
+                                {
+                                confidence = g.confidence;
+                                startTime = g.startTime;
+                                endTime   =g.endTime;
+
+                                }
+                            
 
 
 
@@ -165,6 +180,7 @@ namespace BHMS.Controllers
                 Debug.WriteLine("");
                 Debug.WriteLine("Player Widget url:");
                 Debug.WriteLine(playerWidgetLink);
+
                 return View();
             }
         }

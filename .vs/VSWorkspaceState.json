@@ -4,8 +4,9 @@
     "\\BHMS",
     "\\BHMS.CORE",
     "\\BHMS.CORE\\Contract",
-    "\\BHMS\\Controllers"
+    "\\BHMS\\Controllers",
+    "\\BHMS\\Models"
   ],
-  "SelectedNode": "\\BHMS.CORE\\Contract\\IRepository.cs",
+  "SelectedNode": "\\BHMS\\Models\\DetectedModels.cs",
   "PreviewInSolutionExplorer": false
 }
