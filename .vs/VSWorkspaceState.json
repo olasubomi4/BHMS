@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\BHMS",
+    "\\BHMS.CORE",
+    "\\BHMS.CORE\\Contract",
     "\\BHMS\\Controllers"
   ],
-  "SelectedNode": "\\BHMS\\Controllers\\ObjectDetectorController.cs",
+  "SelectedNode": "\\BHMS.CORE\\Contract\\IRepository.cs",
   "PreviewInSolutionExplorer": false
 }
