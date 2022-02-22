@@ -63,7 +63,7 @@ namespace BHMS.Controllers
                 Debug.WriteLine("Uploading...");
                 // get the video from URL
 
-                var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1644533035/bhms/students/items/2022-02-05 17-18-32.mkv.mkv";
+                var videoUrl = videoToinvesigate.UploadURl;
                     //videoToinvesigate.UploadURl; // replace with the video URL
 
                 // as an alternative to specifying video URL, you can upload a file.

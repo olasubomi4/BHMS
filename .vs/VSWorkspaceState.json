@@ -7,6 +7,6 @@
     "\\BHMS\\Controllers",
     "\\BHMS\\Models"
   ],
-  "SelectedNode": "\\BHMS\\Models\\DetectedModels.cs",
+  "SelectedNode": "\\BHMS\\Controllers\\ObjectDetectorController.cs",
   "PreviewInSolutionExplorer": false
 }
