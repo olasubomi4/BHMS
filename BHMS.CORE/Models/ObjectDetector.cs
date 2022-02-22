@@ -8,9 +8,21 @@ namespace BHMS.CORE.Models
 {
     public class ObjectDetector : BaseEntity
     {
-        public string Insight { get; set; }
-       
-     
+      
+        public string name { get; set; }
+        public double confidence { get; set; }
+        public string startTime { get; set; }
+        public string endTime { get; set; }
+
+        public string vidUploadId { get; set; }
+
+        public string playerWidgetLink { get; set; }
+
+        public string insightsWidgetLink { get; set; }
+
+
+
+
 
 
 

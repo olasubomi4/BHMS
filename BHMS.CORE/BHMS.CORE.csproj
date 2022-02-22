@@ -54,6 +54,7 @@
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\CollectionDataModel.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemCategory.cs" />
     <Compile Include="Models\ObjectDetector.cs" />

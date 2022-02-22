@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BHMS/App_Data/database-for-bhmss22list.mdf
+/BHMS/App_Data/database-for-bhmss22list_log.ldf
+/BHMS/App_Data/database-for-bhmss22_log.ldf
+/BHMS/App_Data/database-for-bhmss22in_log.ldf
+/BHMS/App_Data/database-for-bhmsstestdelete_log.ldf

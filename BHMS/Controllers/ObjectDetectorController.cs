@@ -17,22 +17,24 @@ namespace BHMS.Controllers
     public class ObjectDetectorController : Controller
     {
         // GET: ObjectDetector
-        IRepository<VidUpload> context;
-
-        public ObjectDetectorController(IRepository<VidUpload> context)
+        IRepository<ObjectDetector> context;
+        IRepository<VidUpload> vidUploadcon;
+        public ObjectDetectorController(IRepository<ObjectDetector> context, IRepository<VidUpload> vidContext)
         {
             this.context = context;
+            vidUploadcon = vidContext;
+
         }
         public ActionResult Index()
         {
-            List<VidUpload> vidUploads = context.Collection().ToList();
+            List<VidUpload> vidUploads = vidUploadcon.Collection().ToList();
             return View(vidUploads);
         }
        
         public ActionResult ObjectDetector(string Id,VidUpload vidUpload)
         {
-             VidUpload videoToinvesigate = context.Find(Id);
-
+             VidUpload videoToinvesigate = vidUploadcon.Find(Id);
+            ObjectDetector objectDetector = new ObjectDetector();
             if (videoToinvesigate == null)
             {
                 return HttpNotFound();
@@ -63,7 +65,7 @@ namespace BHMS.Controllers
                 Debug.WriteLine("Uploading...");
                 // get the video from URL
 
-                var videoUrl = videoToinvesigate.UploadURl;
+                var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1645188566/bhms/students/items/IMG_5709.MOV.mov";
                     //videoToinvesigate.UploadURl; // replace with the video URL
 
                 // as an alternative to specifying video URL, you can upload a file.
@@ -95,6 +97,24 @@ namespace BHMS.Controllers
                     var videoGetIndexRequestResult = client.GetAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos/{videoId}/Index?accessToken={videoAccessToken}&language=English").Result;
                     var videoGetIndexResult = videoGetIndexRequestResult.Content.ReadAsStringAsync().Result;
 
+                    // get insights widget url
+
+                    var insightsWidgetRequestResult = client.GetAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos/{videoId}/InsightsWidget?accessToken={videoAccessToken}&widgetType=Keywords&allowEdit=true").Result;
+                    var insightsWidgetLink = insightsWidgetRequestResult.Headers.Location;
+                    Debug.WriteLine("Insights Widget url:");
+                    Debug.WriteLine(insightsWidgetLink);
+                   
+                    ViewBag.k = insightsWidgetLink;
+
+                    // get player widget url
+                    var playerWidgetRequestResult = client.GetAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos/{videoId}/PlayerWidget?accessToken={videoAccessToken}").Result;
+                    var playerWidgetLink = playerWidgetRequestResult.Headers.Location;
+                    Debug.WriteLine("");
+                    Debug.WriteLine("Player Widget url:");
+                    Debug.WriteLine(playerWidgetLink);
+                    
+                    ViewBag.playerWidgetLink = playerWidgetLink;
+
                     var processingState = JsonConvert.DeserializeObject<dynamic>(videoGetIndexResult)["state"];
 
                     Debug.WriteLine("");
@@ -114,33 +134,62 @@ namespace BHMS.Controllers
 
 
                         SummarizedInsights deserializedDetectedModels = JsonConvert.DeserializeObject<SummarizedInsights>(videoGetIndexResult);
-                        string f = "";
-                        double confidence = 0.00 ;
-                        string startTime = "";
-                        string endTime = "";
+                        //string f = "";
+                        //double confidence = 0.00 ;
+                        //string startTime = "";
+                        //string endTime = "";
 
 
 
+                       
 
                         var blogPosts = stuff.summarizedInsights.labels;
                         foreach (dynamic d in blogPosts)
                         {
                             if (d.name == videoToinvesigate.ItemName)
-
-                                f = d.name;
-                                
-                                dynamic stufff =d.appearances;
-                                
+                            {
+                                objectDetector.vidUploadId = videoToinvesigate.Id;
+                                ViewBag.name = d.name;
+                                objectDetector.name = d.name;
+                                dynamic stufff = d.appearances;
                                 foreach (dynamic g in stufff)
                                 {
-                                confidence = g.confidence;
-                                startTime = g.startTime;
-                                endTime   =g.endTime;
+                                    ViewBag.confidence = g.confidence;
+                                   ViewBag.startTime = g.startTime;
+                                    ViewBag.endTime = g.endTime;
+                                    objectDetector.confidence = g.confidence;
+                                    
+                                    objectDetector.startTime = g.startTime;
+                                    objectDetector.endTime = g.endTime;
+                                    objectDetector.insightsWidgetLink = insightsWidgetLink.ToString();
+                                    objectDetector.playerWidgetLink = playerWidgetLink.ToString();
+                                    ViewBag.ok = "OK";
+                                   
 
                                 }
+                                var vidUploadId = objectDetector.vidUploadId;
+                                ObjectDetector itemToDelete = context.Find(vidUploadId);
+                                List<ObjectDetector> objectDetectors = context.Collection().ToList();
+                                var itemss = from x in objectDetectors
+                                             where x.vidUploadId == vidUploadId //if you are using a string guid, otherwise remove ToString()
+                                             select x;
+
+                                if (itemss ==null )
+                                {
+
+
+                                    context.Insert(objectDetector);
+                                    context.Commit();
+                                }
+                                else
+                                {
+                                  
+
+                                    context.Commit();
+                                }
+                            }
+
                             
-
-
 
                         }
                       
@@ -165,23 +214,69 @@ namespace BHMS.Controllers
                 Debug.WriteLine(searchResult);
 
                 // get insights widget url
-                var insightsWidgetRequestResult = client.GetAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos/{videoId}/InsightsWidget?accessToken={videoAccessToken}&widgetType=Keywords&allowEdit=true").Result;
-                var insightsWidgetLink = insightsWidgetRequestResult.Headers.Location;
-                Debug.WriteLine("Insights Widget url:");
-                Debug.WriteLine(insightsWidgetLink);
-                ViewBag.k = insightsWidgetRequestResult;
+                
 
 
 
 
                 // get player widget url
-                var playerWidgetRequestResult = client.GetAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos/{videoId}/PlayerWidget?accessToken={videoAccessToken}").Result;
-                var playerWidgetLink = playerWidgetRequestResult.Headers.Location;
-                Debug.WriteLine("");
-                Debug.WriteLine("Player Widget url:");
-                Debug.WriteLine(playerWidgetLink);
+      
 
                 return View();
+            }
+        }
+
+        
+        public ActionResult Detected(string Id)
+        {
+            VidUpload vidUpload = vidUploadcon.Find(Id);
+            List<ObjectDetector> objectDetectors = context.Collection().ToList();
+            var itemss = from x in objectDetectors
+                           where x.vidUploadId == Id//if you are using a string guid, otherwise remove ToString()
+                           select x;
+            if (itemss == null)
+            {
+                ViewBag.missing = "MISSING";
+                return View();
+            }
+            else
+            {
+                return View(itemss);
+            }
+        }
+        public ActionResult Delete(string Id)
+        {
+
+
+            ObjectDetector item = context.Find(Id);
+
+
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View(item);
+            }
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult confirmDelete(string Id,string vidUploadId)
+        {
+
+            ObjectDetector item = context.Find(Id);
+
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                context.Delete(vidUploadId);
+                context.Commit();
+                return RedirectToAction("index");
             }
         }
     }
