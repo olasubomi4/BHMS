@@ -15,10 +15,12 @@
                 <ul>
                     <li>@Html.ActionLink("Profile", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
                     <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
-@*                    <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
-*@                    @if (User.IsInRole("Admin"))
+                    @*<li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
+                    *@
+                    @if (User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("Roles", "Index", "Role")</li>
+                        <li>@Html.ActionLink("Detect Objects", "Index", "ObjectDetector")</li>
                     }
                 </ul>
             </li>
