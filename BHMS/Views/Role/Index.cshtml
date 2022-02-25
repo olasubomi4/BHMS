@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "Index";
 }
+<br />
+<br />
+<br />
 
 <h2>Index</h2>
 
@@ -16,9 +19,7 @@
     </section>
     <section class="col-sm-6">
         <table class="table-bordered">
-
-            @Html.ActionLink("Assign role", "RegisterRole", "Account")
-            @Html.ActionLink("Assign role to User", "RegisterRole", "Account", new { @class = "btn btn-primary btn-sm btn block" })
+            @Html.ActionLink("Assign role to User", "RegisterRole", "Account")
         </table>
     </section>
     <br /> <br />

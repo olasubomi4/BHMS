@@ -14,6 +14,7 @@ namespace BHMS.Controllers
 {
     public class ObjectDetectorController : Controller
     {
+        static string api = "6758c8d19c1742f48f8323afe02e1331";
         //    // GET: ObjectDetector
         //    IRepository<ObjectDetector> context;
 
@@ -26,7 +27,14 @@ namespace BHMS.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult ObjectDetector()
+        {
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult ObjectDetector(string api)
         {
             var apiUrl = "https://api.videoindexer.ai";
             var accountId = "b957b20c-a572-407d-83cc-26f69f597c3a";
@@ -85,11 +93,6 @@ namespace BHMS.Controllers
 
                 var processingState = JsonConvert.DeserializeObject<dynamic>(videoGetIndexResult)["state"];
 
-
-                
-                
-
-
                 Debug.WriteLine("");
                 Debug.WriteLine("State:");
 
@@ -100,21 +103,8 @@ namespace BHMS.Controllers
                     Debug.WriteLine("");
                     Debug.WriteLine("Full JSON:");
 
-                    
-
                     ViewBag.k = videoGetIndexResult;
-                    DetectedModels deserializedDetectedModels = JsonConvert.DeserializeObject<DetectedModels>(videoGetIndexResult);
-
-                    dynamic stuff = JsonConvert.DeserializeObject(videoGetIndexResult);
-
-                    string nme = stuff.summarizedInsights.name;
-
-                    var eat = deserializedDetectedModels.labels;
-
-                    foreach (var item in eat)
-                    {
-                        ViewBag.showitem = item;
-                    }
+                    
                     break;
                 }
             }

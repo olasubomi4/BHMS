@@ -33,47 +33,16 @@
     <div class="container d-flex justify-content-between align-items-center">
 
         <div class="logo">
-            <h1 class="text-light"><a href="index.html"><span>BHMS</span></a></h1>
+            <h1 class="text-light">@Html.ActionLink("BHMS", "Index", "Home")</h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li>@Html.ActionLink("Home", "Index", "Home", htmlAttributes: new { @class = "active" })</li>
-                <li>@Html.ActionLink("About", "Index", "Home")</li>
-                
 
-                @if (User.Identity.IsAuthenticated)
-                {
-                    if (User.IsInRole("Admin"))
-                    {
-                        <li class="dropdown">
-                            <a href="#"><span>Options</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li>@Html.ActionLink("Profile", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-                                <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
-                                <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
-                                <li>@Html.ActionLink("View Role", "Index", "Role")</li>
-                                <li>@Html.ActionLink("Assign role", "RegisterRole", "Account")</li>
-                                <li>@Html.ActionLink("Create Role", "Create", "Role")</li>
-                                <li>@Html.ActionLink("Roles", "Index", "Role")</li>
-                                <li class="dropdown">
-                                    <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Deep Drop Down 1</a></li>
-                                        <li><a href="#">Deep Drop Down 2</a></li>
-                                        <li><a href="#">Deep Drop Down 3</a></li>
-                                        <li><a href="#">Deep Drop Down 4</a></li>
-                                        <li><a href="#">Deep Drop Down 5</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    }
-
-                }
                 @Html.Partial("_LoginPartial")
+
                 @*<li><a href="portfolio.html">Portfolio</a></li>*@
 
 
@@ -81,7 +50,6 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
-
     </div>
 </header>
 
