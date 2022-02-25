@@ -43,7 +43,7 @@ namespace BHMS.Controllers
                 var apiUrl = "https://api.videoindexer.ai";
                 var accountId = "b957b20c-a572-407d-83cc-26f69f597c3a";
                 var location = "trial"; // replace with the account's location, or with “trial” if this is a trial account
-                var apiKey = "6758c8d19c1742f48f8323afe02e1331";
+                var apiKey = "6cfbb9ab70f44fc8bb00dd626e63ef78";
 
                 System.Net.ServicePointManager.SecurityProtocol = System.Net.ServicePointManager.SecurityProtocol | System.Net.SecurityProtocolType.Tls12;
 
@@ -109,9 +109,6 @@ namespace BHMS.Controllers
 
                         dynamic stuff = JsonConvert.DeserializeObject(videoGetIndexResult);
 
-
-
-
                         SummarizedInsights deserializedDetectedModels = JsonConvert.DeserializeObject<SummarizedInsights>(videoGetIndexResult);
                         string f = "";
                         double confidence = 0.00;
@@ -124,19 +121,7 @@ namespace BHMS.Controllers
 
                                 f = d.name;
                                 confidence = d.appearances.confidence;
-
-
-
                         }
-                      
-                            
-                        
-
-                           
-                        
-                     
-
-
 
                         break;
                     }
