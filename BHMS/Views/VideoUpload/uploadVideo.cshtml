@@ -31,12 +31,21 @@
             </div>
         </div>
         <div>
+            @ViewBag.Messag
             @Html.TextBox("file", "", new { type = "file" }) <br />
             <input type="submit" value="Upload" />
             @{
                 if (ViewBag.Result == "OK")
                 {
-                    <p>Your video has been uploaded successfully!</p>
+                    <p>@ViewBag.Message</p>
+                }
+                else if (ViewBag.Result == null)
+                {
+                    <h2> testing null</h2>
+                }
+                else
+                {
+                    <h2>Video upload was not successful</h2>
                 }
             }
         </div>

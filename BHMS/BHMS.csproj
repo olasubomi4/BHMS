@@ -572,6 +572,7 @@
     <Content Include="Views\VideoUpload\Delete.cshtml" />
     <Content Include="Views\ObjectDetector\ObjectDetector.cshtml" />
     <Content Include="Views\ObjectDetector\Index.cshtml" />
+    <Content Include="Views\ObjectDetector\Detected.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

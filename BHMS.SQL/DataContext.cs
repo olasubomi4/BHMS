@@ -22,6 +22,7 @@ namespace BHMS.SQL
         public DbSet<ItemCategory> ItemCategories { get; set; }
         public DbSet<VidUpload> vidupload { get; set; }
 
+        public DbSet<ObjectDetector> objectDetectors { get; set; }
 
     }
 

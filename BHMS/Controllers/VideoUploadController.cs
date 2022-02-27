@@ -24,7 +24,11 @@ namespace BHMS.Controllers
         // GET: VideoUpload
         public ActionResult Index()
         {
+
+
             List<VidUpload> vidUpload = context.Collection().ToList();
+
+
             return View(vidUpload);
         }
 
@@ -33,6 +37,7 @@ namespace BHMS.Controllers
         public const string CloudName = "df68mnbrt";
         public const string APIKey = "125432585352169";
         public const string APISecret = "dRY6pDVTdhV101t0y5Oby4mmA8Q";
+
 
         [HttpGet]
         public ActionResult uploadVideo()
@@ -48,6 +53,7 @@ namespace BHMS.Controllers
             Account account = new Account(CloudName, APIKey, APISecret);
             cloudinary = new Cloudinary(account);
             cloudinary.Api.Secure = true;
+
 
             /*var uploadParams = new ImageUploadParams()
             {
@@ -101,13 +107,21 @@ namespace BHMS.Controllers
 
 
 
+
                     vidupload.UploadURl = uploadResultt.ToString();
+                    var uploadResultThumbnail = uploadResultt.ToString();
+                    uploadResultThumbnail = uploadResultThumbnail.Remove(uploadResultThumbnail.Length - 4);
+                    uploadResultThumbnail = uploadResultThumbnail.Insert(uploadResultThumbnail.Length, ".jpg");
+                    vidupload.Uploadtumb = uploadResultThumbnail;
+
+
 
                     if (vidupload != null)
                     {
                         vidupload.UploadResult = uploadResult.ToString();
                         ViewBag.Result = vidupload.UploadResult;
-                        
+
+
                         context.Insert(vidupload);
                         context.Commit();
 
@@ -141,7 +155,7 @@ namespace BHMS.Controllers
             }
             else
             {
-             
+
 
 
                 return View(vidupload);
@@ -162,7 +176,7 @@ namespace BHMS.Controllers
                 {
                     return View(vidupload);
                 }
-              
+
 
 
 

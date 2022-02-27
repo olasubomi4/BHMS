@@ -8,12 +8,15 @@ namespace BHMS.CORE.Models
 {
     public class VidUpload : BaseEntity
     {
-        public string ItemName { get;set; }
+        public string ItemName { get; set; }
         public string ItemDescription { get; set; }
         public string UploadResult { get; set; }
         public string UploadURl { get; set; }
 
-        
+        public string Uploadtumb { get; set; }
+
+
+
 
 
 
