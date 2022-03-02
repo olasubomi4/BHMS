@@ -65,10 +65,10 @@ namespace BHMS.Controllers
                 Debug.WriteLine("Uploading...");
                 // get the video from URL
 
-                var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1645188566/bhms/students/items/IMG_5709.MOV.mov";
+                var videoUrl = videoToinvesigate.UploadURl;
                 //videoToinvesigate.UploadURl; // replace with the video URL
 
-                // as an alternative to specifying video URL, you can upload a file.
+                // as an alternative to specIMG_5709.MOV.movifying video URL, you can upload a file.
                 // remove the videoUrl parameter from the query string below and add the following lines:
                 //FileStream video =File.OpenRead(Globals.VIDEOFILE_PATH);
                 //byte[] buffer = new byte[video.Length];
@@ -174,11 +174,28 @@ namespace BHMS.Controllers
                                 var itemss = from x in objectDetectors
                                              where x.vidUploadId == vidUploadId //if you are using a string guid, otherwise remove ToString()
                                              select x;
-                                         
+                                var resultt = 0;
 
+                                foreach(var itemlength in itemss )
+                                {
+                                    var hh = itemlength;
+                                    if (itemlength.vidUploadId == vidUploadId)
+                                    {
+                                         resultt= 1;
+
+                                    }
+                                    else
+                                    {
+                                        resultt = 0;
+                                    }
+                                }
+
+                                
+                                
+                                
                                
                                 
-                                if (itemToDelete == null)
+                                if (resultt == 0)
                                 {
                                     context.Insert(objectDetector);
                                     context.Commit();
