@@ -42,24 +42,29 @@
 
                 @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @placeholder = "Confirm Password" } })
                 @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(BHMS.Models.Gender))))
+                    </div>
+                </div>
+                        @*<div class="select-list">
+                <select name="course_type" id="course_type">
+                    <option slected value="">Course of Study</option>
+                    <option value="society">Society</option>
+                    <option value="language">Language</option>
+                </select>
+            </div>*@
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" class="submit" value="Sign-up" />
+                    </div>
+                </div>
 
-
-                @*<div class="select-list">
-                        <select name="course_type" id="course_type">
-                            <option slected value="">Course of Study</option>
-                            <option value="society">Society</option>
-                            <option value="language">Language</option>
-                        </select>
-                    </div>*@
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
-            </div>
-            <div class="form-submit">
-                <input type="submit" class="submit" value="Sign-up" />
-            </div>
-        </div>
 
     </div>
 }

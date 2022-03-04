@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using BHMS.CORE.Models;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BHMS.Models
@@ -62,7 +63,7 @@ namespace BHMS.Models
         public bool RememberMe { get; set; }
     }
 
-    public class RegisterViewModel
+    public class RegisterViewModel : BaseEntity
     {
         public string Name { get; set; }
 
@@ -88,7 +89,7 @@ namespace BHMS.Models
         [Required, Display(Name = "Lastname")]
         public string LastName { get; set; }
 
-        [Required, Display(Name = "Matriculation Number")]
+        [Required, StringLength(100, ErrorMessage = "Your matric number must be 7 letters long.", MinimumLength = 7), Display(Name = "MatricNo")]
         public string MatricNo { get; set; }
 
         [Required, Display(Name = "Course")]
@@ -97,10 +98,17 @@ namespace BHMS.Models
         [Required, Display(Name = "Level")]
         public int Level { get; set; }
 
-        
-    }
+        [Required]
+        [Display(Name = "Gender")]
+        public Gender Gender { get; set; }
 
-    public class ResetPasswordViewModel
+
+    }
+    public enum Gender
+    { Male = 0, Female = 1 }
+
+
+public class ResetPasswordViewModel
     {
         [Required]
         [EmailAddress]

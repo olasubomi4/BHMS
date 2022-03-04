@@ -65,7 +65,8 @@ namespace BHMS.Controllers
                 Debug.WriteLine("Uploading...");
                 // get the video from URL
 
-                var videoUrl = videoToinvesigate.UploadURl;
+                var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1646218132/bhms/students/items/IMG_5709.MOV.mov";
+            
                 //videoToinvesigate.UploadURl; // replace with the video URL
 
                 // as an alternative to specIMG_5709.MOV.movifying video URL, you can upload a file.
@@ -253,15 +254,39 @@ namespace BHMS.Controllers
             var itemss = from x in objectDetectors
                          where x.vidUploadId == Id//if you are using a string guid, otherwise remove ToString()
                          select x;
-            if (itemss == null)
+            var resultt = 0;
+
+            foreach (var vid in itemss)
             {
-                ViewBag.missing = "MISSING";
-                return View();
+
+
+                if (Id == vid.vidUploadId)
+                {
+                    resultt = 1;
+                    var vidlin = vidUpload.UploadURl;
+                    ViewBag.linkk = vidlin;
+
+
+                }
+                else
+                {
+                    resultt = 0;
+                }
+
             }
-            else
-            {
-                return View(itemss);
-            }
+           
+
+           
+                if (resultt == 0)
+                {
+                    ViewBag.missing = "MISSING";
+                    return View();
+                }
+                else
+                {
+                    return View(itemss);
+                }
+            
         }
         public ActionResult Delete(string Id)
         {

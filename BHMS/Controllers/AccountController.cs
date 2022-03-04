@@ -155,6 +155,7 @@ namespace BHMS.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var user = new ApplicationUser
                 {
                     UserName = model.Email,
@@ -164,6 +165,7 @@ namespace BHMS.Controllers
                     MatricNo = model.MatricNo,
                     Course = model.Course,
                     Level = model.Level
+
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

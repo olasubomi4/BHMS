@@ -6,7 +6,6 @@ C:\Users\olasubomi\source\repos\BHMS2555\BHMS.CORE\bin\Debug\Unity.Container.dll
 C:\Users\olasubomi\source\repos\BHMS2555\BHMS.CORE\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\olasubomi\source\repos\BHMS2555\BHMS.CORE\bin\Debug\Unity.Abstractions.pdb
 C:\Users\olasubomi\source\repos\BHMS2555\BHMS.CORE\bin\Debug\Unity.Container.pdb
-C:\Users\olasubomi\source\repos\BHMS2555\BHMS.CORE\obj\Debug\BHMS.CORE.csproj.AssemblyReference.cache
 C:\Users\olasubomi\source\repos\BHMS2555\BHMS.CORE\obj\Debug\BHMS.CORE.csproj.CoreCompileInputs.cache
 C:\Users\olasubomi\source\repos\BHMS2555\BHMS.CORE\obj\Debug\BHMS.CORE.csproj.CopyComplete
 C:\Users\olasubomi\source\repos\BHMS2555\BHMS.CORE\obj\Debug\BHMS.CORE.dll
@@ -24,3 +23,4 @@ C:\Users\yuung\source\repos\BHMSvidupload\BHMS.CORE\obj\Debug\BHMS.CORE.csproj.C
 C:\Users\yuung\source\repos\BHMSvidupload\BHMS.CORE\obj\Debug\BHMS.CORE.csproj.CopyComplete
 C:\Users\yuung\source\repos\BHMSvidupload\BHMS.CORE\obj\Debug\BHMS.CORE.dll
 C:\Users\yuung\source\repos\BHMSvidupload\BHMS.CORE\obj\Debug\BHMS.CORE.pdb
+C:\Users\olasubomi\Source\Repos\BHMS2555\BHMS.CORE\obj\Debug\BHMS.CORE.csproj.AssemblyReference.cache
