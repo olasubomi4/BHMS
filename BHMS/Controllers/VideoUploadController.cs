@@ -8,6 +8,10 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+
 
 namespace BHMS.Controllers
 {
@@ -27,7 +31,14 @@ namespace BHMS.Controllers
 
 
             List<VidUpload> vidUpload = context.Collection().ToList();
-
+            var validd = 0;
+            foreach( var check in vidUpload)
+            {
+                
+                    ViewBag.resultt = "yes";
+                
+                
+            }
 
             return View(vidUpload);
         }
@@ -39,21 +50,19 @@ namespace BHMS.Controllers
         public const string APISecret = "nDTb_W6CpE5TQj4_lgt1_dmQGQ0";
 
 
+
         [HttpGet]
         public ActionResult uploadVideo()
         {
-
             return View();
         }
 
-        public ActionResult UploadVideo(VidUpload vidupload, HttpPostedFileBase file)
+        public ActionResult uploadVideo(VidUpload vidupload,HttpPostedFileBase file)
         {
-
-            VidUpload model = new VidUpload();
+            
             Account account = new Account(CloudName, APIKey, APISecret);
             cloudinary = new Cloudinary(account);
             cloudinary.Api.Secure = true;
-
 
             /*var uploadParams = new ImageUploadParams()
             {
@@ -93,76 +102,60 @@ namespace BHMS.Controllers
                     string _FileName = Path.GetFileName(file.FileName);
                     string _path = Path.Combine(Server.MapPath("~/assets/img/uploadedImgs"), _FileName);
                     file.SaveAs(_path);
-                    var uurl = cloudinary.Api.UrlImgUp.Transform(new Transformation().Width(100).Height(150).Crop("fill")).BuildUrl(_path);
 
-
-
-
-            var uploadParams = new VideoUploadParams()
-            {
-                File = new FileDescription(_path),
-                PublicId = $"bhms / students / items /{ _FileName }",
-                EagerTransforms = new List<Transformation>()
-                {
-                    new EagerTransformation().Width(300).Height(300).Crop("pad").AudioCodec("none"),
-                    new EagerTransformation().Width(160).Height(100).Crop("crop").Gravity("south").AudioCodec("none"),
-                },
-                EagerAsync = true,
-                EagerNotificationUrl = "https://mysite.example.com/my_notification_endpoint"
+                    var uploadParams = new VideoUploadParams()
+                    {
+                        File = new FileDescription(_path),
+                        PublicId = $"bhms/students/items/{_FileName}",
+                        Overwrite = true,
+                        NotificationUrl = "https://mysite.example.com/my_notification_endpoint"
+                    };
                 
-            };
+
+                var uploadResult = cloudinary.Upload(uploadParams).StatusCode;
+                var uploadResultt = cloudinary.Upload(uploadParams).SecureUrl;
 
 
 
 
+                vidupload.UploadURl = uploadResultt.ToString();
+                var uploadResultThumbnail = uploadResultt.ToString();
+                uploadResultThumbnail = uploadResultThumbnail.Remove(uploadResultThumbnail.Length - 4);
+                uploadResultThumbnail = uploadResultThumbnail.Insert(uploadResultThumbnail.Length, ".jpg");
+                vidupload.Uploadtumb = uploadResultThumbnail;
 
 
 
-
-                    var uploadResult = cloudinary.Upload(uploadParams).StatusCode;
-                    var uploadResultt = cloudinary.Upload(uploadParams).SecureUrl;
-
-
-
-
-                    vidupload.UploadURl = uploadResultt.ToString();
-                    var uploadResultThumbnail = uploadResultt.ToString();
-                    uploadResultThumbnail = uploadResultThumbnail.Remove(uploadResultThumbnail.Length - 4);
-                    uploadResultThumbnail = uploadResultThumbnail.Insert(uploadResultThumbnail.Length, ".jpg");
-                    vidupload.Uploadtumb = uploadResultThumbnail;
+                if (vidupload != null)
+                {
+                    vidupload.UploadResult = uploadResult.ToString();
+                    ViewBag.Result = vidupload.UploadResult;
 
 
+                    context.Insert(vidupload);
+                    context.Commit();
 
-                    if (vidupload != null)
-                    {
-                        vidupload.UploadResult = uploadResult.ToString();
-                        ViewBag.Result = vidupload.UploadResult;
-                        context.Insert(vidupload);
-                        context.Commit();
+                    return View();
 
-
-                        return View();
-
-                    }
-                    else
-                    {
-                        return HttpNotFound();
-                    }
-           
                 }
+                else
+                {
+                    return HttpNotFound();
+                }
+            }
 
                 ViewBag.Message = "File Uploaded Successfully!!";
 
 
-                return View();
-            }
+            return View();
+        }
             catch
             {
                 ViewBag.Message = "File upload failed!!";
                 return View();
-            }
-        }
-        [Authorize]
+    }
+}
+[Authorize]
         public ActionResult Edit(string Id)
         {
             VidUpload vidupload = context.Find(Id);

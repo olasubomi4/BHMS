@@ -262,6 +262,8 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HostelController.cs" />
+    <Compile Include="Controllers\HostelRegistrationController.cs" />
     <Compile Include="Controllers\ItemCategoryManagerController.cs" />
     <Compile Include="Controllers\ItemManagerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -573,10 +575,15 @@
     <Content Include="Views\ObjectDetector\ObjectDetector.cshtml" />
     <Content Include="Views\ObjectDetector\Index.cshtml" />
     <Content Include="Views\ObjectDetector\Detected.cshtml" />
+    <Content Include="Views\Hostel\Create.cshtml" />
+    <Content Include="Views\Hostel\Edit.cshtml" />
+    <Content Include="Views\Hostel\Index.cshtml" />
+    <Content Include="Views\HostelRegistration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\img\uploadedImgs\" />
+    <Folder Include="Content\HostelImages\" />
     <Folder Include="Content\ItemImages\" />
     <Folder Include="Views\Video\" />
   </ItemGroup>

@@ -21,6 +21,9 @@ namespace BHMS.CORE.Models
         public string insightsWidgetLink { get; set; }
 
 
+        
+
+
 
 
 

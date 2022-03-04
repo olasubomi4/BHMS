@@ -1,6 +1,6 @@
 ﻿@model BHMS.CORE.Models.VidUpload
 @{
-    ViewBag.Title = "uploadVideo";
+    ViewBag.Title = "Upload a Video";
 }
 
 <h2>uploadVideo</h2>
@@ -33,17 +33,23 @@
         <div>
             @ViewBag.Messag
             @Html.TextBox("file", "", new { type = "file" }) <br />
-            <p>@ViewBag.Result</p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Upload" />
             @{
                 if (ViewBag.Result == "OK")
                 {
-                    <p>Your video has been uploaded successfully!</p>
+                    <p>@ViewBag.Message</p>
+                }
+                else if (ViewBag.Result == null)
+                {
+                    
+                }
+                else
+                {
+                    <h2>Video upload was not successful</h2>
                 }
             }
-            <h4> @ViewBag.k</h4>
-            <h4> @ViewBag.message</h4>
-
         </div>
+
+
     </div>
 }
