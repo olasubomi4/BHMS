@@ -1,16 +1,19 @@
 ﻿using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
 using BHMS.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace BHMS.Controllers
 {
     public class HostelRegistrationController : Controller
-
     {
         IRepository<HostelRegistration> context;
         IRepository<Hostel> hostelcon;
@@ -29,33 +32,38 @@ namespace BHMS.Controllers
         // GET: HostelRegistration
         public ActionResult Index()
         {
-  //          List<RegisterViewModel> registerViewModels = registercon.Collection().ToList();
+            //List<RegisterViewModel> registerViewModels = registercon.Collection().ToList();
+
+            var user = User.Identity.GetUserId();
+            
+
             List<Hostel> hostels = hostelcon.Collection().ToList();
 
-            //var currentUserGender = from t in registerViewModels
-            //                        where t.Email == User.Identity.Name //if you are using a string guid, otherwise remove ToString()
-            //                        select t;
+           /*var currentUserGender = from t in registerViewModels
+                                  where t.Email == User.Identity.Name //if you are using a string guid, otherwise remove ToString()
+                                  select t;*/
 
-            //foreach (var check in currentUserGender)
-            //{
+            /*foreach (var check in currentUserGender)
+            {
              
-            //    if (check.Gender == 0)
-            //    {
-            //        var gender = from t in hostels
-            //                     where (Convert.ToInt32(t.Gender) == 0)//if you are using a string guid, otherwise remove ToString()
-            //                     select t;
-                   
-            //    }
-            //    else
-            //    {
-            //        var gender = from t in hostels
-            //                     where (Convert.ToInt32(t.Gender) == 1) //if you are using a string guid, otherwise remove ToString()
-            //                     select t;
-                   
+                if (check.Gender == 0)
+                {
+                    *//*var gender = from t in hostels
+                                 where (Convert.ToInt32(t.Gender) == 0)//if you are using a string guid, otherwise remove ToString()
+                                 select t;*//*
+                    hostels = hostels.Where<Hostel>(x => x.Gender == CORE.Models.Gender.Male).ToList();
 
-            //    }
+                }
+                else
+                {
+                    var gender = from t in hostels
+                                 where (Convert.ToInt32(t.Gender) == 1) //if you are using a string guid, otherwise remove ToString()
+                                 select t;
 
-            //}
+
+                }
+
+            }*/
 
 
 

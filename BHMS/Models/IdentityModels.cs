@@ -14,6 +14,7 @@ namespace BHMS.Models
         public string MatricNo { get; set; }
         public string Course { get; set; }
         public int Level { get; set; }
+        public Gender Gender { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

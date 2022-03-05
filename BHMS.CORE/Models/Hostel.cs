@@ -11,32 +11,19 @@ namespace BHMS.CORE.Models
 {
     public class Hostel : BaseEntity
     {
-
         public string Hostelname { get; set; }
         public int Capacity { get; set; }
         public int Availablespace { get; set; }
         public string Halladmin { get; set; }
-
-      
-
-       
-
         public string HostelImage { get; set; }
-
         [Required]
         [Display(Name = "Gender")]
         public Gender Gender { get; set; }
-
         [Required]
         [Display(Name = "Category")]
         public HostelCategoryy HostelCategory { get; set; }
-
         public int Hostelblocks { get; set; }
-
         public int Roomsperblock { get; set; }
-
-       
-
 
     }
 

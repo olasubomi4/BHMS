@@ -18,13 +18,6 @@ namespace BHMS.CORE.Models
 
         [Required, StringLength(7, ErrorMessage = "Your matric number must be 7 letters long.", MinimumLength = 7), Display(Name = "Matriculation Number")]
         public string roommateNo{ get; set; }
-        
-        
-
-
-
-
-
 
     }
 }

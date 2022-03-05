@@ -23,18 +23,19 @@ namespace BHMS.Controllers
         // GET: Hostel
         public ActionResult Index()
         {
+            var userGender = User.Identity.ToString();
             List<Hostel> hostels = context.Collection().ToList();
-            return View(hostels);
+            
+            List<Hostel> maleHostels = hostels.Where<Hostel>(x => x.Gender == Gender.Male).ToList();
+            
+            return View(maleHostels);
+            //return View(hostels);
         }
         [Authorize]
         public ActionResult Create()
         {
 
             Hostel hostel = new Hostel();
-           
-
-
-
             return View(hostel);
         }
 
