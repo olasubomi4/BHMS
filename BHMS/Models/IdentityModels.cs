@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -14,6 +15,10 @@ namespace BHMS.Models
         public string MatricNo { get; set; }
         public string Course { get; set; }
         public int Level { get; set; }
+       
+        public Gender Gender { get; set; }
+
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -23,6 +28,8 @@ namespace BHMS.Models
             return userIdentity;
         }
     }
+
+
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

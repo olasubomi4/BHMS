@@ -1,8 +1,11 @@
 ﻿using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
+using BHMS.CORE.ViewModels;
 using BHMS.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,48 +17,56 @@ namespace BHMS.Controllers
     {
         IRepository<HostelRegistration> context;
         IRepository<Hostel> hostelcon;
-        IRepository<RegisterViewModel> registercon;
 
+        ApplicationDbContext fcontext;
+        
 
-        public HostelRegistrationController(IRepository<HostelRegistration> Context, IRepository<Hostel> hostelcontext, IRepository<RegisterViewModel> registercontext)
+        public HostelRegistrationController(IRepository<HostelRegistration> hocontext, IRepository<Hostel> hostelcontext,ApplicationDbContext usercontext)
         {
-            this.context = Context;
+            context = hocontext;
             hostelcon = hostelcontext;
-            registercon = registercontext;
+            fcontext = new ApplicationDbContext();
 
+           
 
 
         }
         // GET: HostelRegistration
         public ActionResult Index()
         {
-  //          List<RegisterViewModel> registerViewModels = registercon.Collection().ToList();
-            List<Hostel> hostels = hostelcon.Collection().ToList();
+            var use = fcontext.Users.ToList(); 
+           
+          List<Hostel> hostels = hostelcon.Collection().ToList();
 
-            //var currentUserGender = from t in registerViewModels
-            //                        where t.Email == User.Identity.Name //if you are using a string guid, otherwise remove ToString()
-            //                        select t;
 
-            //foreach (var check in currentUserGender)
-            //{
-             
-            //    if (check.Gender == 0)
-            //    {
-            //        var gender = from t in hostels
-            //                     where (Convert.ToInt32(t.Gender) == 0)//if you are using a string guid, otherwise remove ToString()
-            //                     select t;
-                   
-            //    }
-            //    else
-            //    {
-            //        var gender = from t in hostels
-            //                     where (Convert.ToInt32(t.Gender) == 1) //if you are using a string guid, otherwise remove ToString()
-            //                     select t;
-                   
+            var currentUserGender = from t in use
 
-            //    }
+                                    where t.Email == User.Identity.Name //if you are using a string guid, otherwise remove ToString()
+                                    select t;
+            IEnumerable<BHMS.CORE.Models.Hostel> hostels1 = Enumerable.Empty<BHMS.CORE.Models.Hostel>();
+            IEnumerable<BHMS.CORE.Models.Hostel> hostels2 = Enumerable.Empty<BHMS.CORE.Models.Hostel>();
+            foreach (var check in currentUserGender)
+            {
 
-            //}
+                if (check.Gender == 0)
+                {
+                    var gender0 = from t in hostels
+                                  where (Convert.ToInt32(t.Gender) == 0)//if you are using a string guid, otherwise remove ToString()
+                                  select t;
+                    hostels1 = gender0;
+
+                }
+                else
+                {
+                    var gender1 = from t in hostels
+                                  where (Convert.ToInt32(t.Gender) == 1) //if you are using a string guid, otherwise remove ToString()
+                                  select t;
+                    hostels1 = gender1;
+
+                }
+
+
+            }
 
 
 
@@ -71,44 +82,70 @@ namespace BHMS.Controllers
             //                 select x;
             //}
 
-            return View(hostels);
+            return View(hostels1);
 
         }
 
 
-        //        [Authorize]
-        //        public ActionResult Create()
-        //        {
+        [Authorize]
+        public ActionResult Create(string Id)
+        {
+           
+            Hostel hostelss = hostelcon.Find(Id);
 
-        //            HostelRegistration hostelRegistration = new HostelRegistration();
-
-
-
-
-        //            return View(hostelRegistration);
-        //        }
-
-        //        [HttpPost]
-        //        public ActionResult Create(HostelRegistration hostelRegistration)
-        //        {
-        //            List<Hostel> hostels = hostelcon.Collection().ToList();
-        //            if (!ModelState.IsValid)
-        //            {
-        //                return View(hostelRegistration);
-        //            }
-        //            else
-        //            {
+            
+            dynamic f= JsonConvert.DeserializeObject(hostelss.rooms);
 
 
-        //            }
+            //  var room = from t in hostels
+
+            //                        where t.Id == Id //if you are using a string guid, otherwise remove ToString()
+            //                         select t;
+            //foreach(var check in room)
+            //{
+
+            //}
+            //HostelViewModel hostelViewModel = new HostelViewModel();
+
+            //dynamic myModel
+            /*hostelViewModel.Hostels= hostelcon.Collection();
+            var f= hostelViewModel.Hostels;
+            f.
+            hostelViewModel.HostelRegistration = new HostelRegistration();
 
 
-        //            context.Insert(hostelRegistration);
-        //            context.Commit();
+*/
+            ViewBag.room = f;
+            return View();
+        }
 
-        //            return RedirectToAction("index");
+        [HttpPost]
+        public ActionResult Create(HostelRegistration hostelRegistration,string Id)
+        {
 
-        //        }
+
+
+
+            if (!ModelState.IsValid)
+            {
+                return View(hostelRegistration);
+            }
+            else
+            {
+
+
+                var gg = hostelRegistration.room;
+
+
+            }
+
+
+
+          
+
+            return View();
+
+        }
         //        [Authorize]
         //        public ActionResult Edit(string Id)
         //        {

@@ -1,5 +1,6 @@
 ﻿using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -66,6 +67,33 @@ namespace BHMS.Controllers
                         {
                             hostel.Roomsperblock = (hostel.Capacity / 6) / hostel.Hostelblocks;
                         }
+
+                    
+                    var alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                    
+                    List<string> roomalpha = new List<string>();
+                    List<string> roomlist = new List<string>();
+                    for (int i = 0; i < hostel.Hostelblocks; i++)
+                    {
+                        
+                        
+                        for (int j = 1; j <= hostel.Roomsperblock; j++)
+                        {
+
+                            roomlist.Add(alphabets[i] + "F" +j);
+
+
+                        }
+
+
+                    }
+
+                   
+
+                    
+                    var listString = JsonConvert.SerializeObject(roomlist);
+
+                    hostel.rooms = listString;
                 }
 
             }

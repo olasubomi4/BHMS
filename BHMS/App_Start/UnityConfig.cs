@@ -1,6 +1,7 @@
 using BHMS.Controllers;
 using BHMS.CORE.Contract;
 using BHMS.CORE.Models;
+using BHMS.Models;
 using BHMS.SQL;
 using System;
 
@@ -53,6 +54,9 @@ namespace BHMS
             container.RegisterType<IRepository<VidUpload>, SQLRepository<VidUpload>>();
             container.RegisterType<IRepository<ObjectDetector>, SQLRepository<ObjectDetector>>();
             container.RegisterType<IRepository<Hostel>, SQLRepository<Hostel>>();
+            container.RegisterType<IRepository<RegisterViewModel>, SQLRepository<RegisterViewModel>>();
+            container.RegisterType<IRepository<HostelRegistration>, SQLRepository<HostelRegistration>>();
+
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
         }

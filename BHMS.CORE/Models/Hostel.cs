@@ -36,7 +36,7 @@ namespace BHMS.CORE.Models
         public int Roomsperblock { get; set; }
 
        
-
+        public string rooms { get; set; }
 
     }
 

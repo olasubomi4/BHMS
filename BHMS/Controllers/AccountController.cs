@@ -164,7 +164,9 @@ namespace BHMS.Controllers
                     LastName = model.LastName,
                     MatricNo = model.MatricNo,
                     Course = model.Course,
-                    Level = model.Level
+                    Level = model.Level,
+                    Gender= model.Gender
+                    
 
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);

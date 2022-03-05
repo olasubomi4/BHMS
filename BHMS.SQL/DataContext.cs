@@ -25,7 +25,8 @@ namespace BHMS.SQL
         public DbSet<ObjectDetector> objectDetectors { get; set; }
 
         public DbSet<Hostel> hostels { get; set; }
-      
+        public DbSet<HostelRegistration> hostelRegistrations { get; set; }
+
     }
 
     internal sealed class Configuration : DbMigrationsConfiguration<DataContext>

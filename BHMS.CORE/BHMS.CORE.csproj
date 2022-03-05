@@ -63,6 +63,7 @@
     <Compile Include="Models\ObjectDetector.cs" />
     <Compile Include="Models\VidUpload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HostelViewModel.cs" />
     <Compile Include="ViewModels\ItemManagerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
