@@ -156,6 +156,7 @@ namespace BHMS.Controllers
             if (ModelState.IsValid)
             {
 
+               
                 var user = new ApplicationUser
                 {
                     UserName = model.Email,

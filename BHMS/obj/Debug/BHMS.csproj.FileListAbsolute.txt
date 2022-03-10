@@ -424,3 +424,6 @@ C:\Users\yuung\source\repos\BHMSvidupload\BHMS\obj\Debug\BHMS.csproj.CoreCompile
 C:\Users\yuung\source\repos\BHMSvidupload\BHMS\obj\Debug\BHMS.csproj.CopyComplete
 C:\Users\yuung\source\repos\BHMSvidupload\BHMS\obj\Debug\BHMS.dll
 C:\Users\yuung\source\repos\BHMSvidupload\BHMS\obj\Debug\BHMS.pdb
+C:\Users\olasubomi\Source\Repos\BHMS2555\BHMS\bin\FluentValidation.dll
+C:\Users\olasubomi\Source\Repos\BHMS2555\BHMS\bin\FluentValidation.xml
+C:\Users\olasubomi\Source\Repos\BHMS2555\BHMS\bin\System.ComponentModel.Annotations.dll

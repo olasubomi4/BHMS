@@ -116,7 +116,7 @@ namespace BHMS.Controllers
                 var uploadResultt = cloudinary.Upload(uploadParams).SecureUrl;
 
 
-
+                vidupload.ItemName = vidupload.ItemName.ToLower();
 
                 vidupload.UploadURl = uploadResultt.ToString();
                 var uploadResultThumbnail = uploadResultt.ToString();
@@ -189,9 +189,9 @@ namespace BHMS.Controllers
 
 
 
-
+                
                 vidToEdit.ItemDescription = vidupload.ItemDescription;
-                vidToEdit.ItemName = vidupload.ItemName;
+                vidToEdit.ItemName = vidupload.ItemName.ToLower();
 
 
 

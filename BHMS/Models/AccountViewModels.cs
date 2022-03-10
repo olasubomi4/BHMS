@@ -1,6 +1,12 @@
 ﻿using BHMS.CORE.Models;
+using BHMS.SQL;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using FluentValidation;
+using System.Web.Mvc;
+using CompareAttribute = System.ComponentModel.DataAnnotations.CompareAttribute;
+
 
 namespace BHMS.Models
 {
@@ -30,6 +36,7 @@ namespace BHMS.Models
         public string Provider { get; set; }
 
         [Required]
+        
         [Display(Name = "Code")]
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
@@ -62,13 +69,14 @@ namespace BHMS.Models
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
+   
 
     public class RegisterViewModel : BaseEntity
     {
         public string Name { get; set; }
 
         [Required]
-        [EmailAddress]
+        [EmailAddress] 
         [Display(Name = "Email")]
         public string Email { get; set; }
 
@@ -89,7 +97,12 @@ namespace BHMS.Models
         [Required, Display(Name = "Lastname")]
         public string LastName { get; set; }
 
-        [Required, StringLength(100, ErrorMessage = "Your matric number must be 7 letters long.", MinimumLength = 7), Display(Name = "MatricNo")]
+        [Required]
+        [StringLength(7, ErrorMessage = "Your matric number must be 7 letters long.", MinimumLength = 7)]
+     
+        [Display(Name = "MatricNo")]
+        [EmailValidationN(ErrorMessage = "The Matric no already exists")]
+        
         public string MatricNo { get; set; }
 
         [Required, Display(Name = "Course")]
@@ -107,8 +120,44 @@ namespace BHMS.Models
     public enum Gender
     { Male = 0, Female = 1 }
 
+   
+   /* public class PlaceValidator : AbstractValidator<RegisterViewModel>
+    {
+        public PlaceValidator()
+        {
+            
+            RuleFor(x => x.MatricNo).Must(BeUniqueUrl).WithMessage("MATRIC NUMBER already exists");
+        }
 
-public class ResetPasswordViewModel
+        private bool BeUniqueUrl(string MatricNo)
+        {
+            return new ApplicationDbContext().Users.FirstOrDefault(x => x.MatricNo == MatricNo) == null;
+        }
+    }
+   */
+    public class EmailValidationN : ValidationAttribute
+    {
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            
+            if (value != null)
+            {
+                var valueAsString = value.ToString();
+                IEnumerable<string> matricNo = new ApplicationDbContext().Users.Where(x => x.MatricNo != null).Select(x => x.MatricNo); 
+        
+                if (matricNo.Contains(valueAsString))
+                {
+                    var errorMessage = FormatErrorMessage(validationContext.DisplayName);
+                    return new ValidationResult(errorMessage);
+                }
+                
+            }
+            return ValidationResult.Success;
+        }
+    }
+
+    public class ResetPasswordViewModel
     {
         [Required]
         [EmailAddress]

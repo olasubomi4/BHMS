@@ -24,3 +24,5 @@ C:\Users\yuung\source\repos\BHMSvidupload\BHMS.CORE\obj\Debug\BHMS.CORE.csproj.C
 C:\Users\yuung\source\repos\BHMSvidupload\BHMS.CORE\obj\Debug\BHMS.CORE.dll
 C:\Users\yuung\source\repos\BHMSvidupload\BHMS.CORE\obj\Debug\BHMS.CORE.pdb
 C:\Users\olasubomi\Source\Repos\BHMS2555\BHMS.CORE\obj\Debug\BHMS.CORE.csproj.AssemblyReference.cache
+C:\Users\olasubomi\Source\Repos\BHMS2555\BHMS.CORE\bin\Debug\FluentValidation.dll
+C:\Users\olasubomi\Source\Repos\BHMS2555\BHMS.CORE\bin\Debug\FluentValidation.xml

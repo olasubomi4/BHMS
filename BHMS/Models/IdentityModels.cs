@@ -42,5 +42,6 @@ namespace BHMS.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }
