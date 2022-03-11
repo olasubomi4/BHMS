@@ -121,9 +121,13 @@ namespace BHMS.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(HostelRegistration hostelRegistration,string Id)
+        public ActionResult Create(HostelRegistration hostelRegistration, string Id)
         {
             Hostel hostelToEdit = hostelcon.Find(Id);
+            dynamic f = JsonConvert.DeserializeObject(hostelToEdit.rooms);
+            
+            ViewBag.room = f;
+
             if (hostelToEdit == null)
             {
                 return HttpNotFound();
@@ -136,6 +140,8 @@ namespace BHMS.Controllers
                 HostelRegistration hostelRegistrationForRoomMate = new HostelRegistration();
                 List<HostelRegistration> hostelregistrations = context.Collection().ToList();
                 var findMatricNoList = fcontext.Users.ToList();
+                hostelRegistration.Hostelid = Id;
+                hostelRegistration.Halladmin = hostelToEdit.Halladmin;
                 hostelRegistration.Id = Guid.NewGuid().ToString();
                 var findExactUser = from t in findMatricNoList
 
@@ -167,11 +173,10 @@ namespace BHMS.Controllers
                     {
 
 
-                        hostelToEdit.Availablespace = hostelToEdit.Availablespace - 1;
 
-                        context.Insert(hostelRegistration);
-                        context.Commit();
-                        
+
+
+
 
 
 
@@ -205,24 +210,27 @@ namespace BHMS.Controllers
                                     if (testing2 == 0)
                                     {
 
-                                        Hostel hostelss = hostelcon.Find(hostelRegistration.Hostelid);
+                                        Hostel hostelss = hostelcon.Find(hostelRegistration.Id);
                                         var checkroom = from t in hostelregistrations
 
                                                         where t.room == hostelRegistration.room  //if you are using a string guid, otherwise remove ToString()
                                                         select t;
-                                        if (Convert.ToInt32(hostelss.HostelCategory) == 0)
+                                        if (Convert.ToInt32(hostelToEdit.HostelCategory) == 0)
                                         {
 
                                             foreach (var checkava in checkroom)
                                             {
                                                 countRoomMates = countRoomMates + 1;
                                             }
-                                            if (countRoomMates > 1)
+                                            if (countRoomMates >= 1)
                                             {
-                                                ViewBag.Error = " Insufficent space Cant add roomMate";
+                                                ViewBag.Error = " Insufficent space cant add roomMate";
                                             }
                                             else
                                             {
+                                                context.Insert(hostelRegistration);
+                                                context.Commit();
+
                                                 hostelRegistrationForRoomMate.User = hostelRegistration.roommateNo;
                                                 hostelRegistrationForRoomMate.roommateNo = null;
                                                 hostelRegistrationForRoomMate.Id = Guid.NewGuid().ToString();
@@ -236,6 +244,7 @@ namespace BHMS.Controllers
                                                 context.Insert(hostelRegistrationForRoomMate);
                                                 context.Commit();
                                                 hostelcon.Commit();
+                                                ViewBag.Success = "Registered for two users";
 
 
                                             }
@@ -247,12 +256,14 @@ namespace BHMS.Controllers
                                             {
                                                 countRoomMates = countRoomMates + 1;
                                             }
-                                            if (countRoomMates > 3)
+                                            if (countRoomMates >= 3)
                                             {
-                                                ViewBag.Error = " Insufficent space Cant add roomMate";
+                                                ViewBag.Error = " Insufficent space cant add roomMate";
                                             }
                                             else
                                             {
+                                                context.Insert(hostelRegistration);
+                                                context.Commit();
                                                 hostelRegistrationForRoomMate.User = hostelRegistration.roommateNo;
                                                 hostelRegistrationForRoomMate.roommateNo = null;
                                                 hostelRegistrationForRoomMate.Id = Guid.NewGuid().ToString();
@@ -260,9 +271,10 @@ namespace BHMS.Controllers
                                                 hostelRegistrationForRoomMate.room = hostelRegistration.room;
                                                 hostelToEdit.Availablespace = hostelToEdit.Availablespace - 2;
 
-                                                context.Insert(hostelRegistration);
+                                                context.Insert(hostelRegistrationForRoomMate);
                                                 context.Commit();
                                                 hostelcon.Commit();
+                                                ViewBag.Success = "Registered for two users";
 
 
                                             }
@@ -273,12 +285,14 @@ namespace BHMS.Controllers
                                             {
                                                 countRoomMates = countRoomMates + 1;
                                             }
-                                            if (countRoomMates > 5)
+                                            if (countRoomMates >= 5)
                                             {
-                                                ViewBag.Error = " Insufficent space Cant add roomMate";
+                                                ViewBag.Error = " Insufficent space cant add roomMate";
                                             }
                                             else
                                             {
+                                                context.Insert(hostelRegistration);
+                                                context.Commit();
                                                 hostelRegistrationForRoomMate.User = hostelRegistration.roommateNo;
                                                 hostelRegistrationForRoomMate.roommateNo = null;
                                                 hostelRegistrationForRoomMate.Id = Guid.NewGuid().ToString();
@@ -286,9 +300,10 @@ namespace BHMS.Controllers
                                                 hostelRegistrationForRoomMate.room = hostelRegistration.room;
                                                 hostelToEdit.Availablespace = hostelToEdit.Availablespace - 2;
 
-                                                context.Insert(hostelRegistration);
+                                                context.Insert(hostelRegistrationForRoomMate);
                                                 context.Commit();
                                                 hostelcon.Commit();
+                                                ViewBag.Success = "Registered for two users";
 
 
                                             }
@@ -307,23 +322,90 @@ namespace BHMS.Controllers
 
 
 
-
+ 
                             }
 
                         }
 
                         else
                         {
-                            ViewBag.Error = "THis user has a room already ";
+                            var checkroom = from t in hostelregistrations
+
+                                            where t.room == hostelRegistration.room  //if you are using a string guid, otherwise remove ToString()
+                                            select t;
+                            if (Convert.ToInt32(hostelToEdit.HostelCategory) == 0)
+                            {
+
+                                foreach (var checkava in checkroom)
+                                {
+                                    countRoomMates = countRoomMates + 1;
+                                }
+                                if (countRoomMates >= 1)
+                                {
+                                    ViewBag.Error = " Room is full ";
+                                }
+                                else
+                                {
+                                    hostelToEdit.Availablespace = hostelToEdit.Availablespace - 1;
+                                    context.Insert(hostelRegistration);
+                                    context.Commit();
+                                    hostelcon.Commit();
+                                    ViewBag.Success = "Registered for one user";
+
+
+                                }
+                            }
+                            else if (Convert.ToInt32(hostelToEdit.HostelCategory) == 1)
+                            {
+
+                                foreach (var checkava in checkroom)
+                                {
+                                    countRoomMates = countRoomMates + 1;
+                                }
+                                if (countRoomMates >= 4)
+                                {
+                                    ViewBag.Error = " Room is full";
+                                }
+                                else
+                                {
+                                    hostelToEdit.Availablespace = hostelToEdit.Availablespace - 1;
+                                    context.Insert(hostelRegistration);
+                                    context.Commit();
+                                    hostelcon.Commit();
+                                    ViewBag.Success = "Registered for one user";
+
+
+                                }
+                            }
+                            else
+                            {
+                                foreach (var checkava in checkroom)
+                                {
+                                    countRoomMates = countRoomMates + 1;
+                                }
+                                if (countRoomMates >= 6)
+                                {
+                                    ViewBag.Error = " Room is full";
+                                }
+                                else
+                                {
+                                    hostelToEdit.Availablespace = hostelToEdit.Availablespace - 1;
+                                    context.Insert(hostelRegistration);
+                                    context.Commit();
+                                    hostelcon.Commit();
+                                    ViewBag.Success = "Registered for one user";
+
+
+                                }
+                            }
+                           
                         }
 
 
-
                     }
-
-
                     else
                     {
+                       
                         ViewBag.Error = "you can only have one room ";
                     }
 
@@ -331,111 +413,23 @@ namespace BHMS.Controllers
 
 
 
+                 return View();
                 }
+
+               
+
+
+
+
+           
             }
-
-
-          return RedirectToAction("index");
-
-
+            
+        }
     }
-        //        [Authorize]
-        //        public ActionResult Edit(string Id)
-        //        {
-        //            Hostel hostel = context.Find(Id);
-        //            if (hostel == null)
-        //            {
-        //                return HttpNotFound();
-        //            }
-        //            else
-        //            {
 
-
-        //                return View(hostel);
-        //            }
-        //        }
-        //        [HttpPost]
-        //        public ActionResult Edit(Hostel hostel, string Id, HttpPostedFileBase file)
-        //        {
-        //            Hostel hostelToEdit = context.Find(Id);
-        //            if (hostelToEdit == null)
-        //            {
-        //                return HttpNotFound();
-        //            }
-        //            else
-        //            {
-
-        //                if (!ModelState.IsValid)
-        //                {
-        //                    return View(hostel);
-        //                }
-        //                if (file != null)
-        //                {
-
-        //                    hostelToEdit.HostelImage = hostelToEdit.Id + Path.GetExtension(file.FileName);
-        //                    file.SaveAs(Server.MapPath("//Content//HostelImages//") + hostelToEdit.HostelImage);
-
-
-
-        //                    if (Convert.ToInt32(hostel.HostelCategory) == 0)
-        //                    {
-        //                        hostelToEdit.Roomsperblock = (hostel.Capacity / 2) / hostel.Hostelblocks;
-        //                    }
-        //                    else if (Convert.ToInt32(hostel.HostelCategory) == 1)
-        //                    {
-        //                        hostelToEdit.Roomsperblock = (hostel.Capacity / 4) / hostel.Hostelblocks;
-        //                    }
-        //                    else
-        //                    {
-        //                        hostelToEdit.Roomsperblock = (hostel.Capacity / 6) / hostel.Hostelblocks;
-        //                    }
-
-        //                }
-
-
-        //                hostelToEdit.Halladmin = hostel.Halladmin;
-        //                hostelToEdit.Hostelname = hostel.Hostelname;
-        //                hostelToEdit.Gender = hostel.Gender;
-        //                hostelToEdit.HostelCategory = hostel.HostelCategory;
-        //                hostelToEdit.Capacity = hostel.Capacity;
-        //                hostelToEdit.Hostelblocks = hostel.Hostelblocks;
-
-        //                context.Commit();
-
-        //                return RedirectToAction("Index");
-
-        //            }
-        //        }
-        //        [Authorize]
-        //        public ActionResult Delete(string Id)
-        //        {
-        //            Hostel hostelToDelete = context.Find(Id);
-
-        //            if (hostelToDelete == null)
-        //            {
-        //                return HttpNotFound();
-        //            }
-        //            else
-        //            {
-        //                return View(hostelToDelete);
-        //            }
-        //        }
-
-        //        [HttpPost]
-        //        [ActionName("Delete")]
-        //        public ActionResult confirmDelete(string Id)
-        //        {
-        //            Hostel hostelToDelete = context.Find(Id);
-        //            if (hostelToDelete == null)
-        //            {
-        //                return HttpNotFound();
-        //            }
-        //            else
-        //            {
-        //                context.Delete(Id);
-        //                context.Commit();
-        //                return RedirectToAction("index");
-        //            }
-        //        }
-    }
+             
 }
+
+
+
+       

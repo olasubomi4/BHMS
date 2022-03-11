@@ -37,7 +37,7 @@
             @{
                 if (ViewBag.Result == "OK")
                 {
-                    <p>@ViewBag.Message</p>
+                    <p>Vido upload was successful</p>
                 }
                 else if (ViewBag.Result == null)
                 {
@@ -48,6 +48,8 @@
                     <h2>Video upload was not successful</h2>
                 }
             }
+            <p>@ViewBag.Result</p>
+            <p>@ViewBag.Message</p>
         </div>
 
 

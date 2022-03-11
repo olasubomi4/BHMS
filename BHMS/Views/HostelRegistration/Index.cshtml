@@ -45,46 +45,45 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hostelname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Capacity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Availablespace)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Halladmin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HostelImage)
-        </td>
-        <td>
-            
-                @Html.DisplayFor(modelItem => item.Gender)
-            
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Hostelname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Capacity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Availablespace)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Halladmin)
+    </td>
+    <td>
+        <img class="img-thumbnail" style="height:50px" src="~/Content/HostelImages/@item.HostelImage" />
+    </td>
+    <td>
 
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HostelCategory)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hostelblocks)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Roomsperblock)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedAt)
-        </td>
-        <td>
-            @Html.ActionLink("Select", "Create", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+        @Html.DisplayFor(modelItem => item.Gender)
+
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HostelCategory)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Hostelblocks)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Roomsperblock)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedAt)
+    </td>
+    <td>
+        @Html.ActionLink("Select Hostel", "Create", new { id = item.Id }) 
+
+    </td>
+</tr>
 }
 
 </table>

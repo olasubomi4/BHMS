@@ -100,7 +100,7 @@ namespace BHMS.Models
         [Required]
         [StringLength(7, ErrorMessage = "Your matric number must be 7 letters long.", MinimumLength = 7)]
      
-        [Display(Name = "MatricNo")]
+        [Display(Name = "Matric Number")]
         [EmailValidationN(ErrorMessage = "The Matric no already exists")]
         
         public string MatricNo { get; set; }
