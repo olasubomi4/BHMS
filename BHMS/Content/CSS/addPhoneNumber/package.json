@@ -1,0 +1,10 @@
+{
+  "name": "figmaexport-buhms-page_1-add_a_phone_number1",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "parcel-bundler": "^1.6.1"
+  },
+  "scripts": {},
+  "devDependencies": {}
+}

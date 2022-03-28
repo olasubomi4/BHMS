@@ -1,0 +1,393 @@
+.deleteconfirmation109117-container {
+  min-height: 100vh;
+}
+.deleteconfirmation109117-deleteconfirmation109117 {
+  width: 1440px;
+  height: 900px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 1440px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  background-image: url("imgs/4215c036-734c-45d9-a7e2-81771d8c6992-hd8-1500w.png");
+}
+.deleteconfirmation109117-image {
+  top: 99px;
+  left: 146px;
+  width: 1179px;
+  height: 701px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.deleteconfirmation109117-svg {
+  top: 606px;
+  left: 218px;
+  width: 1034;
+  height: 1px;
+  position: absolute;
+}
+.deleteconfirmation109117-text {
+  top: 551px;
+  left: 218px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text01 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text02 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 300px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text03 {
+  top: 477px;
+  left: 218px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text04 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-svg1 {
+  top: 532px;
+  left: 218px;
+  width: 1034;
+  height: 1px;
+  position: absolute;
+}
+.deleteconfirmation109117-text05 {
+  top: 403px;
+  left: 218px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text06 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text07 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 300px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-svg2 {
+  top: 458px;
+  left: 218px;
+  width: 1034;
+  height: 1px;
+  position: absolute;
+}
+.deleteconfirmation109117-svg3 {
+  top: 310px;
+  left: 218px;
+  width: 1034;
+  height: 1px;
+  position: absolute;
+}
+.deleteconfirmation109117-svg4 {
+  top: 680px;
+  left: 218px;
+  width: 1034;
+  height: 1px;
+  position: absolute;
+}
+.deleteconfirmation109117-text08 {
+  top: 635px;
+  left: 217px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text09 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text10 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 300px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-svg5 {
+  top: 384px;
+  left: 218px;
+  width: 1034;
+  height: 1px;
+  position: absolute;
+}
+.deleteconfirmation109117-text11 {
+  top: 206px;
+  left: 218.04998779296875px;
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text12 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text13 {
+  top: 152px;
+  left: 218.04998779296875px;
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text14 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text15 {
+  top: 260px;
+  left: 218px;
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text16 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text17 {
+  top: 329px;
+  left: 218px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text18 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text19 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 300px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-group70112134 {
+    color:#fff;
+    padding-left:90px;
+  top: 719px;
+  left: 1016px;
+  width: 236px;
+  height: 54px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(3, 0, 103, 1);
+  border-radius: 10px;
+}
+.deleteconfirmation109117-text20 {
+  top: 13px;
+  left: 89px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text21 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text22 {
+  top: 732px;
+  left: 217px;
+  color: rgba(84, 51, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-text23 {
+  color: rgba(84, 51, 255, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.deleteconfirmation109117-image1 {
+  top: 21px;
+  left: 18px;
+  width: 103px;
+  height: 119px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+}

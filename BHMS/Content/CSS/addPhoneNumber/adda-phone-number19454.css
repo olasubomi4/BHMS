@@ -1,0 +1,147 @@
+.adda-phone-number19454-container {
+  min-height: 100vh;
+}
+.adda-phone-number19454-adda-phone-number19454 {
+  /*width: 1440px;*/
+  height: 900px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  /*max-width: 1440px;*/
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  background-image: url("imgs/9f29e32b-69ae-4e05-a503-2d1750270395-t5hw-1500w.png");
+  background-size: cover;
+}
+.adda-phone-number19454-image {
+  top: 21px;
+  left: 18px;
+  width: 103px;
+  height: 119px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+}
+.adda-phone-number19454-image1 {
+  top: 81px;
+  left: 720px;
+  width: 634px;
+  height: 735px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.adda-phone-number19454-text {
+  top: 140px;
+  left: 767px;
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adda-phone-number19454-text1 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adda-phone-number19454-svg {
+    top: 291px;
+    left: 767px;
+    width: 500;
+    height: 57;
+    position: absolute;
+    border: 2px solid;
+    border-color: rgba(3, 0, 103, 1);
+    border-radius: 10px;
+}
+.errorMessageRed {
+    top: 350px;
+    left: 767px;
+    position: absolute;
+    color: red;
+    
+}
+.adda-phone-number19454-text5 {
+  top: 264px;
+  left: 767px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adda-phone-number19454-text6 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adda-phone-number19454-group7019460 {
+    color: #fff;
+    padding-left: 90px;
+    border-radius: 10px;
+  top: 724px;
+  left: 1092px;
+  width: 236px;
+  height: 54px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(3, 0, 103, 1);
+}
+.adda-phone-number19454-text7 {
+  top: 13px;
+  left: 85px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adda-phone-number19454-text8 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}

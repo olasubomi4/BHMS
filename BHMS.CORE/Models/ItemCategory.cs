@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace BHMS.CORE.Models
 {
     public class ItemCategory : BaseEntity
-    {
+    { 
+        [Required]
         [Display(Name = "Item Category")]
         public string Category { get; set; }
 

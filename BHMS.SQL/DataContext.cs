@@ -27,6 +27,7 @@ namespace BHMS.SQL
         public DbSet<Hostel> hostels { get; set; }
         public DbSet<HostelRegistration> hostelRegistrations { get; set; }
 
+        public System.Data.Entity.DbSet<BHMS.CORE.Models.UserComplaints> UserComplaints { get; set; }
     }
 
     internal sealed class Configuration : DbMigrationsConfiguration<DataContext>

@@ -1,0 +1,281 @@
+﻿@model IEnumerable<BHMS.Models.ApplicationUser>
+@{
+    ViewBag.Title = "StudentsThatAreSignedUp";
+}
+
+
+
+<head>
+    <title>exported project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/registeredStudents/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/registeredStudents/student-list19798.css" rel="stylesheet" />
+        
+        <div class="student-list19798-container">
+            <div class="student-list19798-student-list19798">
+
+                <img src="~/Content/CSS/registeredStudents/imgs/bulogo3197119-liur-200w.png"
+                     alt="BULOGO3197119"
+                     class="student-list19798-image2" />
+
+
+                <img src="~/Content/CSS/registeredStudents/imgs/rectangle4519799-zej4q-700h.png"
+                     alt="Rectangle4519799"
+                     class="student-list19798-image" />
+                <div class="student-list19798-group68197100">
+
+                    <table class="table">
+                        
+                        <tr>
+                            <th class="student-list19798-text34">
+                                @Html.DisplayNameFor(model => model.Passport)
+                            </th>
+                            <th class="student-list19798-text23">
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </th>
+                            <th class="student-list19798-text13">
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </th>
+
+                            <th class="student-list19798-text15">
+                                @Html.DisplayNameFor(model => model.MatricNo)
+                            </th>
+                            <th class="student-list19798-text17">
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th class="student-list19798-text21">
+                                @Html.DisplayNameFor(model => model.Course)
+                            </th>
+                            <th class="student-list19798-text19">
+                                @Html.DisplayNameFor(model => model.Level)
+                            </th>
+
+                            <th></th>
+                        </tr>
+
+                        @foreach (var context in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    <img class="img-thumbnail" style="height:50px" src="~/Content/PassportImages/@context.Passport" />
+
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => context.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => context.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => context.MatricNo)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => context.Email)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => context.Course)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => context.Level)
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = context.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = context.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = context.Id })
+                                </td>
+
+
+                            </tr>
+
+                        }
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+
+<h2>StudentsThatAreSignedUp</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Passport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MatricNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Level)
+        </th>
+
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var context in Model)
+    {
+        <tr>
+
+            <td>
+                <img class="img-thumbnail" style="height:50px" src="~/Content/PassportImages/@context.Passport" />
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => context.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => context.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => context.MatricNo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => context.Email)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => context.Course)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => context.Level)
+            </td>
+
+
+
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = context.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = context.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = context.Id })
+            </td>
+
+
+        </tr>
+
+    }
+</table>
+
+*@

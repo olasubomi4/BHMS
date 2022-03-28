@@ -56,7 +56,7 @@ namespace BHMS
             container.RegisterType<IRepository<Hostel>, SQLRepository<Hostel>>();
             container.RegisterType<IRepository<RegisterViewModel>, SQLRepository<RegisterViewModel>>();
             container.RegisterType<IRepository<HostelRegistration>, SQLRepository<HostelRegistration>>();
-
+            container.RegisterType<IRepository<UserComplaints>, SQLRepository<UserComplaints>>();
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
         }

@@ -1,0 +1,407 @@
+.item-category46140-container {
+    min-height: 100vh;
+}
+
+.item-category46140-item-category46140 {
+    /*width: 1440px;*/
+    height: 900px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    /*max-width: 1440px;*/
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    background-image: url("imgs/71b8dacc-58e3-4c12-b678-969c081b06dc-h3w9-1500w.png");
+    background-size: cover;
+}
+
+.item-category46140-image {
+    top: 99px;
+    left: 130px;
+    width: 1179px;
+    height: 701px;
+    position: absolute;
+    object-fit: cover;
+    border-color: transparent;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.item-category46140-group689635 {
+    top: 152px;
+    left: 202px;
+    width: 1035px;
+    height: 280.5px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+}
+
+.item-category46140-text {
+    top: 218px;
+    left: 863.0543212890625px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text01 {
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text02 {
+    top: 220px;
+    left: 608.0543212890625px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text03 {
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text04 {
+    top: 220px;
+    left: 395.0543212890625px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text05 {
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text06 {
+    color: rgba(3, 0, 103, 1);
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text07 {
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text08 {
+    color: rgba(3, 0, 103, 1);
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.tableHeaderforImage {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    position: absolute;/*
+    font-size: 24px;*/
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text09 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text10 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text11 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text12 {
+    top: 136px;
+    left: 807.0543212890625px;
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text13 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text14 {
+    top: 136px;
+    left: 195.0543212890625px;
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text15 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text16 {
+    top: 0px;
+    left: 16.0543212890625px;
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text17 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text23 {
+    top: 54px;
+    left: 16.0543212890625px;
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    position: absolute;
+    font-size: 36px;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text24 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text25 {
+    color: rgba(3, 0, 103, 1);
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text26 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-svg {
+    top: 187px;
+    left: 1.0543212890625px;
+    width: 1034;
+    height: 1px;
+    position: absolute;
+}
+
+.item-category46140-svg1 {
+    top: 280.5px;
+    width: 1034;
+    height: 1px;
+    position: absolute;
+}
+
+.item-category46140-image1 {
+    top: 187px;
+    left: 41.0543212890625px;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    object-fit: cover;
+    border-color: transparent;
+}
+
+.item-category46140-image2 {
+    top: 372px;
+    left: 1184px;
+    width: 30px;
+    height: 27px;
+    position: absolute;
+    object-fit: cover;
+    border-color: transparent;
+}
+
+.item-category46140-text27 {
+    
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500px;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-text28 {
+    color: rgba(3, 0, 103, 1);
+    height: auto;
+    align-self: auto;
+    font-style: normal;
+    text-align: left;
+    font-weight: 500px;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.item-category46140-image3 {
+    top: 21px;
+    left: 18px;
+    width: 103px;
+    height: 119px;
+    position: absolute;
+    object-fit: cover;
+    border-color: transparent;
+}

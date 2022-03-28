@@ -1,19 +1,170 @@
-﻿
-@model IEnumerable<BHMS.CORE.Models.ObjectDetector>
+﻿@model IEnumerable<BHMS.CORE.Models.ObjectDetector>
 @{
     ViewBag.Title = "ObjectDetector";
 }
-@{ if (ViewBag.ok == "OK")
+
+<head>
+    <title>exported project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/detected/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/detected/object-detector14033.css" rel="stylesheet" />
+
+        <div class="object-detector14033-container">
+            <div class="object-detector14033-object-detector14033">
+
+                <img src="~/Content/CSS/detected/imgs/bulogo314417-h8jk-200w.png"
+                     alt="BULOGO314417"
+                     class="object-detector14033-image3" />
+
+
+                <img src="~/Content/CSS/detected/imgs/rectangle5114034-ojso-800h.png"
+                     alt="Rectangle5114034"
+                     class="object-detector14033-image" />
+
+
+
+                <span class="object-detector14033-text2">
+                    <span class="object-detector14033-text3">Object Detector</span>
+                </span>
+
+                @{
+                    if (ViewBag.missing == "MISSING")
+                    {
+                        <span class="object-detectortextNotDetected">
+                            <span class="object-detector14033-text5">
+                                <p style="font-size:34px"> Object has <strong>not</strong> been investigated!</p>
+                            </span>
+                        </span>
+
+                    }
+
+                    else
+                    {
+                        foreach (var item in Model)
+                        {
+                            <span class="object-detector14033-text4">
+                                <span class="object-detector14033-text5">
+                                    your item <strong>@Html.DisplayFor(modelItem => item.name)</strong>  was dectected from   @Html.DisplayFor(modelItem => item.startTime) to   @Html.DisplayFor(modelItem => item.endTime) with a confidence of  @Html.DisplayFor(modelItem => item.confidence)%
+                                </span>
+                            </span>
+
+                            <iframe width="420" height="315"
+                                    src="@Html.Raw(item.playerWidgetLink)"
+                                    class="object-detector14033-image2">
+                            </iframe>
+
+                        }
+                    }
+                }
+
+
+                <img alt="Line314043"
+                     src="~/Content/CSS/detected/imgs/line314043-ngg.svg"
+                     class="object-detector14033-svg" />
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+@*@{ if (ViewBag.ok == "OK")
     {
-        <p>your item  @ViewBag.name was dectected from    @ViewBag.startTime to @ViewBag.endTime with a confidence of  @ViewBag.confidence</p>
-       
+        <p>your   @ViewBag.name was dectected from    @ViewBag.startTime to @ViewBag.endTime with a confidence of  @ViewBag.confidence</p>
+        <br />
+        <br />
+
         <iframe width="420" height="315"
                 src="@Html.Raw(ViewBag.playerWidgetLink)">
         </iframe>
-    
-        <iframe width="420" height="315"
-                src="@Html.Raw(ViewBag.K)">
-        </iframe>
+
 
 
     }
@@ -23,5 +174,5 @@
         <p>Object does not exist </p>
     }
 }
-<h2>ObjectDetector</h2>
+<h2>ObjectDetector</h2>*@
 

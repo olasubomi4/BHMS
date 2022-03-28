@@ -1,0 +1,233 @@
+.select-room197165-container {
+  min-height: 100vh;
+}
+.select-room197165-select-room197165 {
+  /*width: 1440px;*/
+  height: 1100px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  /*max-width: 1440px;*/
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  background-image: url("imgs/d663fa1a-2837-4490-aaf9-9df0f9da2e33-a1k3-1500w.png");
+}
+.select-room197165-image {
+  top: 21px;
+  left: 18px;
+  width: 103px;
+  height: 119px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+}
+.select-room197165-image1 {
+  top: 81px;
+  left: 720px;
+  width: 634px;
+  height: 735px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.select-room197165-button197175 {
+  top: 291px;
+  left: 767px;
+  width: 211px;
+  display: flex;
+  padding: 8px 16px;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: rgba(3, 0, 103, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  background-color: var(--dl-color-default-whitebcd64);
+}
+.select-room197165-text {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  margin: 0 8px 0 0;
+  font-size: 16px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 500px;
+  line-height: 20px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-text01 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-icon197177 {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  opacity: 0.50;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+}
+.select-room197165-image2 {
+  top: 6.75px;
+  left: 3.000000238418579px;
+  width: 12px;
+  height: 6px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+}
+.select-room197165-text02 {
+  top: 140px;
+  left: 767px;
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-text03 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-svg {
+    top: 393px;
+    left: 767px;
+    width: 500;
+    height: 57;
+    position: absolute;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: rgba(3, 0, 103, 1);
+}
+.responseMsg {
+    color: red;
+    top: 520px;
+    left: 767px;
+    width: 500;
+    height: 57;
+    position: absolute;
+}
+.select-room197165-text07 {
+  top: 363px;
+  left: 767px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-text08 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-text09 {
+  top: 264px;
+  left: 767px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-text10 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-group70197171 {
+    color:#fff;
+    padding-left: 90px;
+    border-radius: 10px;
+  top: 724px;
+  left: 1092px;
+  width: 236px;
+  height: 54px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(3, 0, 103, 1);
+}
+.select-room197165-text11 {
+  top: 13px;
+  left: 85px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.select-room197165-text12 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}

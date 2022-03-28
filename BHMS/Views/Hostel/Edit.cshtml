@@ -4,9 +4,210 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<head>
+    <title>exported project</title>
 
-@using (Html.BeginForm("Edit", "Hostel", FormMethod.Post, new { encType = "multipart/form-data" }))
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/createHostel/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/createHostel/create-a-hostel197120.css" rel="stylesheet" />
+        @using (Html.BeginForm("Edit", "Hostel", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="create-a-hostel197120-container">
+                <div class="create-a-hostel197120-create-a-hostel197120">
+
+                    <img src="~/Content/CSS/createHostel/imgs/bulogo3197163-1ol-200w.png"
+                         alt="BULOGO3197163"
+                         class="create-a-hostel197120-image8" />
+
+                    <div class="create-a-hostel197120-group100197121">
+                        <span class="create-a-hostel197120-text">
+                            <span class="create-a-hostel197120-text01">
+                                Hostel Gender
+                            </span>
+                        </span>
+                        @*<div class="create-a-hostel197120-group49197124">
+                                <span class="create-a-hostel197120-text02">
+                                    <span class="create-a-hostel197120-text03">
+                                        Welcome to BHMS
+                                    </span>
+                                </span>
+                            </div>*@
+                        <span class="create-a-hostel197120-text04">
+                            <span class="create-a-hostel197120-text05">Edit Hostel</span>
+                        </span>
+                        <span class="create-a-hostel197120-text06">
+                            <span class="create-a-hostel197120-text07">
+                                Hostel Name
+                            </span>
+                        </span>
+                        <div class="create-a-hostel197120-group101197128">
+
+                            @Html.EditorFor(model => model.Hostelname, new { htmlAttributes = new { @class = "create-a-hostel197120-image6", @placeholder = "e.g, Bethel, Queen Esther" } })
+                            @Html.ValidationMessageFor(model => model.Hostelname, "", new { @class = "text-danger" })
+
+
+                            <span class="create-a-hostel197120-text16">
+                                <span class="create-a-hostel197120-text17">
+                                   Hostel Capacity
+                                </span>
+                            </span>
+
+                            @Html.EditorFor(model => model.Capacity, new { htmlAttributes = new { @class = "create-a-hostel197120-image" } })
+                            @Html.ValidationMessageFor(model => model.Capacity, "", new { @class = "text-danger" })
+
+                            <span class="create-a-hostel197120-text18">
+                                <span class="create-a-hostel197120-text19">
+                                    Number of Blocks
+                                </span>
+                            </span>
+
+                            @Html.EditorFor(model => model.Hostelblocks, new { htmlAttributes = new { @class = "create-a-hostel197120-image1" } })
+                            @Html.ValidationMessageFor(model => model.Hostelblocks, "", new { @class = "text-danger" })
+
+
+
+                            <span class="create-a-hostel197120-text12">
+                                <span class="create-a-hostel197120-text13">
+                                    Hostel Category
+                                </span>
+                            </span>
+
+                            @Html.EnumDropDownListFor(model => model.HostelCategory, htmlAttributes: new { @class = "create-a-hostel197120-image5" })
+                            @Html.ValidationMessageFor(model => model.HostelCategory, "", new { @class = "text-danger" })
+
+
+
+                            @Html.EnumDropDownListFor(model => model.Gender, htmlAttributes: new { @class = "create-a-hostel197120-image4" })
+                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+
+
+
+                            @Html.EditorFor(model => model.CreatedAt, new { htmlAttributes = new { @class = "create-a-hostel197120-image3" } })
+                            @Html.ValidationMessageFor(model => model.CreatedAt, "", new { @class = "text-danger" })
+
+                            <span class="create-a-hostel197120-text14">
+                                <span class="create-a-hostel197120-text15">
+                                    Hall Administrator Name
+                                </span>
+                            </span>
+
+                            @Html.EditorFor(model => model.Halladmin, new { htmlAttributes = new { @class = "create-a-hostel197120-image2" } })
+                            @Html.ValidationMessageFor(model => model.Halladmin, "", new { @class = "text-danger" })
+
+
+                            <span class="create-a-hostel197120-text08">
+                                <span class="create-a-hostel197120-text09">Hostel Image</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="create-a-hostel197120-group56197155">
+
+                        <input type="submit" value="Save" class="create-a-hostel197120-image7" />
+
+                        <input type="file" id="file" name="file" class="create-a-hostel197120-group56197158" />
+
+                    </div>
+
+                    <span class="create-a-hostel197120-text38">
+                        <span class="create-a-hostel197120-text39">@Html.ActionLink("Back to List", "Index")</span>
+                    </span>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</body>
+
+@*@using (Html.BeginForm("Edit", "Hostel", FormMethod.Post, new { encType = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -25,7 +226,7 @@
             </div>
         </div>
 
-      
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Halladmin, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -81,7 +282,7 @@
         </div>
     </div>
 }
-
+*@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

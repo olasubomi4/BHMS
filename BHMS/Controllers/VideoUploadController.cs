@@ -26,6 +26,7 @@ namespace BHMS.Controllers
         }
 
         // GET: VideoUpload
+        [Authorize] 
         public ActionResult Index()
         {
 
@@ -52,6 +53,7 @@ namespace BHMS.Controllers
 
 
         [HttpGet]
+        [Authorize]
         public ActionResult uploadVideo()
         {
             return View();
@@ -155,7 +157,7 @@ namespace BHMS.Controllers
                 return View();
     }
 }
-[Authorize]
+        [Authorize]
         public ActionResult Edit(string Id)
         {
             VidUpload vidupload = context.Find(Id);

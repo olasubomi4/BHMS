@@ -10,7 +10,7 @@ namespace BHMS.CORE.ViewModels
     public class HostelViewModel
     {
 
-        public HostelRegistration HostelRegistration { get; set; }
-        public IEnumerable<Hostel> Hostels { get; set; }
+        public string room { get; set; }
+        public string MatricNo { get; set; }
     }
 }

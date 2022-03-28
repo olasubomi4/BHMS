@@ -3,41 +3,177 @@
 @{
     ViewBag.Title = "Item Category";
 }
-<br />
-<br />
-<br />
 
-<h2>Item Category</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
+<head>
+    <title>exported project</title>
 
-</table>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/itemCategoryIndex/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/itemCategoryIndex/item-category9639.css" rel="stylesheet" />
+
+        <div class="item-category9639-container">
+            <div class="item-category9639-item-category9639">
+                <img src="~/Content/CSS/itemCategoryIndex/imgs/bulogo310521-n9qh-200w.png"
+                     alt="BULOGO310521"
+                     class="item-category9639-image3" />
+
+
+                <div class="item-category9639-image">
+                    <div class="tableContent">
+                        <table class="table">
+                            <tr>
+                                <th class="item-category9639-text4">
+                                    @Html.DisplayNameFor(model => model.Category)
+                                </th>
+                                <th class="item-category9639-text4">
+                                    @Html.DisplayNameFor(model => model.CreatedAt)
+                                </th>
+
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                        <tr>
+                            <td class="item-category9639-text">
+                                @Html.DisplayFor(modelItem => item.Category, new { @class = "item-category9639-text1" })
+                            </td>
+                            <td class="item-category9639-text">
+                                @Html.DisplayFor(modelItem => item.CreatedAt)
+                            </td>
+
+
+                            <td>
+                                <a href="https://localhost:44363/ItemCategoryManager/Edit/@item.Id">
+                                    <img src="~/assets/img/blog/svgs/bxs-edit.svg" />
+                                </a>
+                                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id })*@
+                                @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                *@
+                            </td>
+                            
+                            <td>
+                                <a href="https://localhost:44363/ItemCategoryManager/Delete/@item.Id">
+                                    <img src="~/assets/img/blog/svgs/bxs-trash.svg" />
+                                </a>
+                                
+                                @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                            </td>
+                        </tr>
+                            }
+
+                        </table>
+                    </div>
+                    
+
+                </div>
+                <!--<img src="~/Content/CSS/itemCategoryIndex/imgs/rectangle469640-yye8-800h.png"-->
+                @*alt="Rectangle469640"*@
+                <!--class="item-category9639-image" />-->
+                @*<span class="item-category9639-text">
+            <span class="item-category9639-text1">Laptop</span>
+        </span>*@
+
+                <img alt="Line39644"
+                     src="public/playground_assets/line39644-y06o.svg"
+                     class="item-category9639-svg" />
+                <img alt="Line49645"
+                     src="public/playground_assets/line49645-9yk.svg"
+                     class="item-category9639-svg1" />
+                
+
+                <span class="item-category9639-text6">
+                    <span class="item-category9639-text7">
+                        @Html.ActionLink("Create new Item Category", "Create")
+                    </span>
+                </span>
+
+            </div>
+        </div>
+    </div>
+</body>

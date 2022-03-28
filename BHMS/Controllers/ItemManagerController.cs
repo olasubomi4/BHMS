@@ -13,7 +13,7 @@ namespace BHMS.Controllers
 {
     public class ItemManagerController : Controller
     {
-      
+
         IRepository<Item> context;
         IRepository<ItemCategory> itemCategories;
 
@@ -21,21 +21,21 @@ namespace BHMS.Controllers
         {
             context = itemContext;
             itemCategories = itemCategoryContext;
-            
+
         }
         // GET: ProductManager
-        [Authorize]
+        /* [Authorize]*/
         public ActionResult Index()
         {
             List<Item> items = context.Collection().ToList();
-            var itemss  = from t in items
-                            where t.user == User.Identity.Name //if you are using a string guid, otherwise remove ToString()
-                            select t;
+            var itemss = from t in items
+                         where t.user == User.Identity.Name //if you are using a string guid, otherwise remove ToString()
+                         select t;
 
             return View(itemss);
         }
 
-        [Authorize]
+        /*[Authorize]*/
         public ActionResult Create()
         {
 
@@ -64,6 +64,8 @@ namespace BHMS.Controllers
                     item.Image = item.Id + Path.GetExtension(file.FileName);
                     file.SaveAs(Server.MapPath("//Content//ItemImages//") + item.Image);
                 }
+
+
 
                 context.Insert(item);
                 context.Commit();
@@ -110,8 +112,6 @@ namespace BHMS.Controllers
                     itemToEdit.Image = item.Id + Path.GetExtension(file.FileName);
                     file.SaveAs(Server.MapPath("//Content//ItemImages//") + itemToEdit.Image);
                 }
-
-
 
 
                 itemToEdit.SerialNumber = item.SerialNumber;

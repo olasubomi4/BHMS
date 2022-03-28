@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BHMS.CORE.Models.HostelRegistration>
+
+@{
+    ViewBag.Title = "RegisteredStudent";
+}
+
+<h2>RegisteredStudent</h2>
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.User)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Halladmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.room)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.roommateNo)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.User)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Halladmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.room)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.roommateNo)
+        </td>
+      
+       =
+    </tr>
+}
+
+</table>

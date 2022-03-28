@@ -1,0 +1,140 @@
+.verify-phone-number25821-container {
+  min-height: 100vh;
+}
+.verify-phone-number25821-verify-phone-number25821 {
+  /*width: 1440px;*/
+  height: 1100px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  /*max-width: 1440px;*/
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  background-image: url("imgs/10a8e9fb-be7b-49c7-9133-89475142eeb9-0w5-1500w.png");
+  background-size: cover;
+}
+.verify-phone-number25821-image {
+  top: 81px;
+  left: 720px;
+  width: 634px;
+  height: 735px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.verify-phone-number25821-svg {
+    top: 291px;
+    left: 767px;
+    width: 500;
+    height: 57;
+    position: absolute;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: rgba(3, 0, 103, 1);
+}
+.verify-phone-number25821-text {
+  top: 140px;
+  left: 767px;
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verify-phone-number25821-text1 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verify-phone-number25821-group7025825 {
+    color: #fff;
+    padding-left: 90px;
+    border-radius: 10px;
+  top: 724px;
+  left: 1092px;
+  width: 236px;
+  height: 54px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  background-color: rgba(3, 0, 103, 1);
+}
+.verify-phone-number25821-text5 {
+  top: 13px;
+  left: 85px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verify-phone-number25821-text6 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verify-phone-number25821-image1 {
+  top: 21px;
+  left: 18px;
+  width: 103px;
+  height: 119px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+}
+.verify-phone-number25821-text7 {
+  top: 264px;
+  left: 767px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.verify-phone-number25821-text8 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}

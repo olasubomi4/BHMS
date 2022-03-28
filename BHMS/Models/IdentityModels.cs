@@ -15,6 +15,7 @@ namespace BHMS.Models
         public string MatricNo { get; set; }
         public string Course { get; set; }
         public int Level { get; set; }
+        public string Passport { get; set; }
        
         public Gender Gender { get; set; }
 

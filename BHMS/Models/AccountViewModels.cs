@@ -115,6 +115,10 @@ namespace BHMS.Models
         [Display(Name = "Gender")]
         public Gender Gender { get; set; }
 
+        [Display(Name = "Passport Photograph")]
+        public string Passport { get; set; }
+
+
 
     }
     public enum Gender

@@ -51,7 +51,7 @@ namespace BHMS.CORE.Models
     public enum Gender
     { Male = 0, Female = 1 }
     public enum HostelCategoryy
-    { Classic = 0, Premiunm = 1 , Regular = 2}
+    { Classic = 0, Premium = 1 , Regular = 2}
 
 
 

@@ -3,67 +3,191 @@
 @{
     ViewBag.Title = "My Items";
 }
-<br />
-<br />
-<br />
-
-<h2>My Items</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SerialNumber)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
 
 
+<head>
+    <title>exported project</title>
 
-        <th></th>
-    </tr>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
 
-    @foreach (var item in Model)
-    {
-<tr>
-    <td>
-        <img class="img-thumbnail" style="height:50px" src="~/Content/ItemImages/@item.Image" />
-    </td>
+        body {
+            margin: 0;
+        }
 
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Color)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SerialNumber)
-    </td>
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
 
-    <td>
-        @Html.DisplayFor(modelItem => item.Category)
-    </td>
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
 
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </td>
-</tr>
-    }
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
 
-</table>
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/items/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/items/item-category46140.css" rel="stylesheet" />
+
+        <div class="item-category46140-container">
+            <div class="item-category46140-item-category46140">
+
+                @*school logo*@
+                <img src="~/Content/CSS/items/imgs/bulogo310522-4f-200w.png"
+                     alt="BULOGO310522"
+                     class="item-category46140-image3" />
+
+                <img src="~/Content/CSS/items/imgs/rectangle459117-6vua-800h.png"
+                     class="item-category46140-image" />
+
+                <div class="item-category46140-group689635">
+                    <table class="table">
+                        <tr>
+
+                            <th class="item-category46140-text25">
+                                @Html.DisplayNameFor(model => model.Image)
+                            </th>
+                            <th class="item-category46140-text08">
+                                @Html.DisplayNameFor(model => model.SerialNumber)
+                            </th>
+                            <th class="item-category46140-text08">
+                                @Html.DisplayNameFor(model => model.Color)
+                            </th>
+                            <th class="item-category46140-text06">
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img class="img-thumbnail" style="height:50px" src="~/Content/ItemImages/@item.Image" />
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SerialNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Color)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id })*@
+                                    <a href="https://localhost:44363/ItemManager/Edit/@item.Id">
+                                        <img src="~/assets/img/blog/svgs/bxs-edit.svg" />
+                                    </a>
+                                    @*@Html.ActionLink("Delete", "Delete", new { id = item.Id }) |*@
+                                </td>
+                                <td>
+                                    <a href="https://localhost:44363/ItemManager/Delete/@item.Id">
+                                        <img src="~/assets/img/blog/svgs/bxs-trash.svg" />
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+
+                        <tr>
+                            <td>
+                                <span class="item-category46140-text27">
+                                    @Html.ActionLink("Add New Item", "Create")
+                                </span>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+
+
+
+                    <img alt="Line19624"
+                         src="public/playground_assets/line19624-npj.svg"
+                         class="item-category46140-svg" />
+                    <img alt="Line29625"
+                         src="public/playground_assets/line29625-k50x.svg"
+                         class="item-category46140-svg1" />
+
+                </div>
+                @*<img src="~/Content/CSS/items/imgs/edit9632-af8s-200h.png"
+                     alt="Edit9632"
+                     class="item-category46140-image2" />*@
+                
+
+
+            </div>
+        </div>
+    </div>
+</body>

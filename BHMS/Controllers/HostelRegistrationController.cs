@@ -28,10 +28,9 @@ namespace BHMS.Controllers
             fcontext = new ApplicationDbContext();
 
 
-
-
         }
         // GET: HostelRegistration
+        
         public ActionResult Index()
         {
             var use = fcontext.Users.ToList();
@@ -134,8 +133,6 @@ namespace BHMS.Controllers
             }
             else
             {
-
-
 
                 HostelRegistration hostelRegistrationForRoomMate = new HostelRegistration();
                 List<HostelRegistration> hostelregistrations = context.Collection().ToList();
@@ -400,19 +397,12 @@ namespace BHMS.Controllers
                             }
                            
                         }
-
-
                     }
                     else
                     {
                        
                         ViewBag.Error = "you can only have one room ";
                     }
-
-
-
-
-
                  return View();
                 }
 
@@ -424,6 +414,11 @@ namespace BHMS.Controllers
            
             }
             
+        }
+        public ActionResult RegisteredStudent()
+        {
+            List<HostelRegistration> registedStudents = context.Collection().ToList();
+            return View(registedStudents);
         }
     }
 

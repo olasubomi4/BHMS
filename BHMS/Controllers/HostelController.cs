@@ -23,6 +23,7 @@ namespace BHMS.Controllers
 
         }
         // GET: Hostel
+        [Authorize]
         public ActionResult Index()
         {
             //This fuction returns a list of all the data in hostel database.
@@ -35,10 +36,6 @@ namespace BHMS.Controllers
 
             // I used the first create function to display elements that I want in the create.cshtml before any action is taken.
             Hostel hostel = new Hostel();
-           
-
-
-
             return View(hostel);
         }
 
@@ -72,7 +69,6 @@ namespace BHMS.Controllers
                             hostel.Roomsperblock = (hostel.Capacity / 2) / hostel.Hostelblocks;
                             
                         }
-
                         else if (Convert.ToInt32(hostel.HostelCategory) == 1)
                         {
                         //This condition calculates the number of room that will be in a Premium hostel based on the hostel capacity and number of blocks
@@ -89,37 +85,24 @@ namespace BHMS.Controllers
                     
                     List<string> roomalpha = new List<string>();
                     List<string> roomlist = new List<string>();
+
                     for (int i = 0; i < hostel.Hostelblocks; i++)
                     {
-                        
-                        
                         for (int j = 1; j <= hostel.Roomsperblock; j++)
                         {
-
                             roomlist.Add(alphabets[i] + "F" +j);
-
-
                         }
                         //This nested forloop will generate a list of rooms in the order of "Af1,AF2,AF3....... NfN"
-
                     }
-
-                   
-
                     //I converted the list into a json file because the database cannot accept a list.
                     var listString = JsonConvert.SerializeObject(roomlist);
-
                     hostel.rooms = listString;
                 }
-
             }
-                
-               
                 context.Insert(hostel);
                 context.Commit();
 
                 return RedirectToAction("index");
-            
         }
         [Authorize]
         public ActionResult Edit(string Id)
@@ -131,11 +114,10 @@ namespace BHMS.Controllers
             }
             else
             {
-
-
                 return View(hostel);
             }
         }
+
         [HttpPost]
         public ActionResult Edit(Hostel hostel, string Id, HttpPostedFileBase file)
         {
@@ -156,8 +138,6 @@ namespace BHMS.Controllers
 
                     hostelToEdit.HostelImage = hostelToEdit.Id + Path.GetExtension(file.FileName);
                     file.SaveAs(Server.MapPath("//Content//HostelImages//") + hostelToEdit.HostelImage);
-
-                    
 
                     if (Convert.ToInt32(hostel.HostelCategory) == 0)
                     {

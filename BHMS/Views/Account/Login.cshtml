@@ -4,11 +4,167 @@
     ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
+
+<head>
+    <title>exported project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/login/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/login/b-u-h-m-s-login7178.css" rel="stylesheet" />
+
+        <div class="b-u-h-m-s-login7178-container">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+
+                <div class="b-u-h-m-s-login7178-b-u-h-m-s-login7178">
+                    <img src="~/Content/CSS/login/imgs/backgroundgirlreading7179-zrlo-900h.png"
+                         alt="backgroundgirlreading7179"
+                         class="b-u-h-m-s-login7178-image" />
+
+                    <img src="~/Content/CSS/login/imgs/bulogo27218-6uqe-200w.png"
+                         alt="BULOGO27218"
+                         class="b-u-h-m-s-login7178-image1" />
+                    <div class="b-u-h-m-s-login7178-group617181">
+                        <span class="b-u-h-m-s-login7178-text">
+                            <span class="b-u-h-m-s-login7178-text01">Sign in</span>
+                        </span>
+                        <div class="b-u-h-m-s-login7178-group547198">
+                            <span class="b-u-h-m-s-login7178-text02">
+                                <span class="b-u-h-m-s-login7178-text03">
+                                    Enter your Student email address
+                                </span>
+                            </span>
+
+                            @Html.TextBoxFor(m => m.Email, new { @class = "b-u-h-m-s-login7178-image2" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-error" })
+
+
+                        </div>
+                        
+                        <div class="b-u-h-m-s-login7178-group557202">
+                            <span class="b-u-h-m-s-login7178-text06">
+                                <span class="b-u-h-m-s-login7178-text07">
+                                    Enter your Password
+
+
+                                </span>
+                            </span>
+
+                            @Html.PasswordFor(m => m.Password, new { @class = "b-u-h-m-s-login7178-image3" })
+                            @Html.ValidationSummary(true, "", new { @class = "passWrdValidation" })
+                            
+                        </div>
+                        <div class="b-u-h-m-s-login7178-group567204">
+                            <span class="b-u-h-m-s-login7178-text10">
+                                @*
+                <span class="b-u-h-m-s-login7178-text11">
+
+                </span>*@
+                            <input type="submit" value="Log in" />
+                        </span>
+                    </div>
+                    </div>
+                    <span class="b-u-h-m-s-login7178-text12">
+                        <span class="b-u-h-m-s-login7178-text13">Welcome to BUHMS</span>
+                    </span>
+                    <img src="~/Content/CSS/login/imgs/user5515-kwg-200h.png"
+                         alt="User5515"
+                         class="b-u-h-m-s-login7178-imae4" />
+                </div>
+            }
+            </div>
+    </div>
+</body>
+
+@*<div class="row">
     <div class="col-md-8">
         <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
                 <h4>Use a local account to log in.</h4>
@@ -43,20 +199,21 @@
                 </div>
                 <p>
                     @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
-            }
+                </p>*@
+
+@* Enable this once you have account confirmation enabled for password reset functionality
+    <p>
+        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+    </p>*@
+@*            }
         </section>
-    </div>
-    <div class="col-md-4">
+    </div>*@
+@*<div class="col-md-4">
         <section id="socialLoginForm">
             @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
-    </div>
-</div>
+    </div>*@
+@*</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

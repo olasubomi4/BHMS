@@ -16,6 +16,7 @@ namespace BHMS.Controllers
 {
     public class ObjectDetectorController : Controller
     {
+        
         // GET: ObjectDetector
         IRepository<ObjectDetector> context;
         IRepository<VidUpload> vidUploadcon;
@@ -25,12 +26,13 @@ namespace BHMS.Controllers
             vidUploadcon = vidContext;
 
         }
+        [Authorize]
         public ActionResult Index()
         {
             List<VidUpload> vidUploads = vidUploadcon.Collection().ToList();
             return View(vidUploads);
         }
-
+        [Authorize]
         public ActionResult ObjectDetector(string Id, VidUpload vidUpload)
         {
             VidUpload videoToinvesigate = vidUploadcon.Find(Id);
@@ -65,8 +67,8 @@ namespace BHMS.Controllers
                 Debug.WriteLine("Uploading...");
                 // get the video from URL
 
-                var videoUrl = "https://res.cloudinary.com/df68mnbrt/video/upload/v1646218132/bhms/students/items/IMG_5709.MOV.mov";
-            
+                var videoUrl = videoToinvesigate.UploadURl;
+
                 //videoToinvesigate.UploadURl; // replace with the video URL
 
                 // as an alternative to specIMG_5709.MOV.movifying video URL, you can upload a file.
@@ -134,14 +136,12 @@ namespace BHMS.Controllers
 
 
 
+
                         SummarizedInsights deserializedDetectedModels = JsonConvert.DeserializeObject<SummarizedInsights>(videoGetIndexResult);
                         //string f = "";
                         //double confidence = 0.00 ;
                         //string startTime = "";
                         //string endTime = "";
-
-
-
 
 
                         var blogPosts = stuff.summarizedInsights.labels;
@@ -155,10 +155,10 @@ namespace BHMS.Controllers
                                 dynamic stufff = d.appearances;
                                 foreach (dynamic g in stufff)
                                 {
-                                    ViewBag.confidence = g.confidence;
+                                    ViewBag.confidence = g.confidence*100;
                                     ViewBag.startTime = g.startTime;
                                     ViewBag.endTime = g.endTime;
-                                    objectDetector.confidence = g.confidence;
+                                    objectDetector.confidence = g.confidence*100;
 
                                     objectDetector.startTime = g.startTime;
                                     objectDetector.endTime = g.endTime;
@@ -191,9 +191,6 @@ namespace BHMS.Controllers
                                     }
                                 }
 
-                                
-                                
-                                
                                
                                 
                                 if (resultt == 0)
@@ -215,13 +212,6 @@ namespace BHMS.Controllers
 
 
 
-
-
-
-
-
-
-
                         break;
                     }
                 }
@@ -235,10 +225,6 @@ namespace BHMS.Controllers
 
                 // get insights widget url
 
-
-
-
-
                 // get player widget url
 
 
@@ -246,7 +232,7 @@ namespace BHMS.Controllers
             }
         }
 
-
+        [Authorize]
         public ActionResult Detected(string Id)
         {
             VidUpload vidUpload = vidUploadcon.Find(Id);
@@ -262,6 +248,7 @@ namespace BHMS.Controllers
 
                 if (Id == vid.vidUploadId)
                 {
+
                     resultt = 1;
                     var vidlin = vidUpload.UploadURl;
                     ViewBag.linkk = vidlin;
@@ -288,6 +275,7 @@ namespace BHMS.Controllers
                 }
             
         }
+        [Authorize]
         public ActionResult Delete(string Id)
         {
 

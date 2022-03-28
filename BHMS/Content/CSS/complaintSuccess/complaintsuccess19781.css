@@ -1,0 +1,98 @@
+.complaintsuccess19781-container {
+  min-height: 100vh;
+}
+.complaintsuccess19781-complaintsuccess19781 {
+  /*width: 1440px;*/
+  height: 900px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  /*max-width: 1440px;*/
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  background-image: url("imgs/1b12b968-ac34-4af9-9a63-d9e6df346a73-ymxm-1500w.png");
+  background-size:cover;
+}
+.complaintsuccess19781-image {
+  top: 21px;
+  left: 18px;
+  width: 103px;
+  height: 119px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+}
+.complaintsuccess19781-image1 {
+  top: 99px;
+  left: 131px;
+  width: 1179px;
+  height: 701px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.complaintsuccess19781-text {
+  top: 734px;
+  left: 131px;
+  color: rgba(84, 51, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.complaintsuccess19781-text1 {
+  color: rgba(84, 51, 255, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.complaintsuccess19781-text2 {
+  top: 518px;
+  left: 392px;
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.complaintsuccess19781-text3 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.complaintsuccess19781-image2 {
+    color: rgba(3, 0, 103, 1);
+    top: 260px;
+    left: 580px;
+    width: auto;
+    height: 273px;
+    position: absolute;
+    object-fit: cover;
+    border-color: transparent;
+}

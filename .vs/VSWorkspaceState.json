@@ -3,9 +3,8 @@
     "",
     "\\BHMS",
     "\\BHMS\\Connected Services",
-    "\\BHMS\\Controllers",
     "\\BHMS\\Models"
   ],
-  "SelectedNode": "\\BHMS\\Controllers\\VideoUploadController.cs",
+  "SelectedNode": "\\BHMS.sln",
   "PreviewInSolutionExplorer": false
 }

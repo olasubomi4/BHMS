@@ -14,13 +14,15 @@
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })@*<i class="bi bi-chevron-down"></i>*@
                 <ul>
                     <li>@Html.ActionLink("Profile", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-                    <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
+                    <li>@Html.ActionLink("Register in hostel", "Index", "HostelRegistration")</li>
+                    <li>@Html.ActionLink("Make a Complaint", "Create", "UserComplaint")</li>
+                    
+
                     @*<li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
                     *@
                     @if (User.IsInRole("Admin"))
                     {
-                        <li>@Html.ActionLink("Roles", "Index", "Role")</li>
-                        <li>@Html.ActionLink("Detect Objects", "Index", "ObjectDetector")</li>
+                        
                     }
                 </ul>
             </li>
@@ -31,8 +33,13 @@
 }
 else
 {
-    <ul class="navbar">
-        <li>@Html.ActionLink("Home", "Index", "Home", htmlAttributes: new { @class = "active" })</li>
+<ul class="navbar">
+    <li>@Html.ActionLink("Home", "Index", "Home"@*htmlAttributes: new { @class = "active" }*@)</li>
+    @if (!(User.Identity.IsAuthenticated))
+    {
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-    </ul>
+        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+    }
+
+</ul>
 }

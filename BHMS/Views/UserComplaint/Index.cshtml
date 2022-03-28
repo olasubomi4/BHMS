@@ -1,0 +1,267 @@
+﻿@model IEnumerable<BHMS.CORE.Models.UserComplaints>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <title>exported project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/studentComplaints/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/studentComplaints/student-complaints197203.css" rel="stylesheet" />
+
+        <div class="student-complaints197203-container">
+            <div class="student-complaints197203-student-complaints197203">
+
+                <img src="~/Content/CSS/studentComplaints/imgs/bulogo3197218-mjg8-200w.png"
+                     alt="BULOGO3197218"
+                     class="student-complaints197203-image1" />
+
+                <img src="~/Content/CSS/studentComplaints/imgs/rectangle45197204-4slg-800h.png"
+                     alt="Rectangle45197204"
+                     class="student-complaints197203-image" />
+
+                <div class="student-complaints197203-image">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        if (User.IsInRole("Admin"))
+                        {
+                            <table class="table">
+                                <tr>
+                                    <th class="student-complaints197203-text11">
+                                        @Html.DisplayNameFor(model => model.studentEmail)
+                                    </th>
+                                    <th class="student-complaints197203-text13">
+                                        @Html.DisplayNameFor(model => model.RoomNo)
+                                    </th>
+                                    <th class="student-complaints197203-text17">
+                                        @Html.DisplayNameFor(model => model.Description)
+                                    </th>
+                                    <th class="student-complaints197203-text15">
+                                        @Html.DisplayNameFor(model => model.CreatedAt)
+                                    </th>
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.studentEmail)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RoomNo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CreatedAt)
+                                        </td>
+                                        <td>
+                                            Handle Complaint
+                                            @* @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                                        </td>
+                                    </tr>
+                                }
+
+                            </table>
+                            <p>
+                                @Html.ActionLink("Create New", "Create")
+                            </p>
+
+                        }
+                    }
+                </div>
+
+
+                
+
+               @* <span class="student-complaints197203-text">
+                    <span class="student-complaints197203-text01">
+                        3/17/20222 4:28:40 PM +1;00
+                    </span>
+                </span>
+                <span class="student-complaints197203-text02">
+                    <span class="student-complaints197203-text03">Broken Door</span>
+                </span>
+                <span class="student-complaints197203-text04">
+                    <span class="student-complaints197203-text05">
+                        nathan@gmail.com
+                    </span>
+                </span>*@
+                @*<span class="student-complaints197203-text06">
+                    <span class="student-complaints197203-text07">BHMS</span>
+                </span>
+                <span class="student-complaints197203-text08">
+                    <span class="student-complaints197203-text09">
+                        Student Complaints
+                    </span>
+                </span>*@
+                <img alt="Line3197208"
+                     src="public/playground_assets/line3197208-fyyo.svg"
+                     class="student-complaints197203-svg" />
+                <img alt="Line4197209"
+                     src="public/playground_assets/line4197209-6nvk.svg"
+                     class="student-complaints197203-svg1" />
+                @*<span class="student-complaints197203-text10">
+                    <span class="student-complaints197203-text11">Student Email</span>
+                </span>*@
+                @*<span class="student-complaints197203-text12">
+                    <span class="student-complaints197203-text13">Room Number</span>
+                </span>*@
+                @*<span class="student-complaints197203-text14">
+                    <span class="student-complaints197203-text15">CreatedAt</span>
+                </span>*@
+                @*<span class="student-complaints197203-text16">
+                    <span class="student-complaints197203-text17">Description</span>
+                </span>*@
+                @*<span class="student-complaints197203-text18">
+                    <span class="student-complaints197203-text19">A99</span>
+                </span>*@
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+@*@if (User.Identity.IsAuthenticated)
+{
+
+    if (User.IsInRole("Admin"))
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.studentEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoomNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedAt)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.studentEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    }
+}*@

@@ -2,20 +2,250 @@
 
 
 <link rel="stylesheet" href="~/assets/regPage/fonts/material-icon/css/material-design-iconic-font.min.css">
-<link rel="stylesheet" href="~/assets/regPage/css/styleReg.css">
+@*<link rel="stylesheet" href="~/assets/regPage/css/styleReg.css">*@
 
 
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "appointment-form", role = "form" }))
-{
-    @Html.AntiForgeryToken()
+<head>
+    <title>exported project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/registerAccount/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/registerAccount/b-u-h-m-s-register7174.css" rel="stylesheet" />
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+
+            <div class="b-u-h-m-s-register7174-container">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="b-u-h-m-s-register7174-b-u-h-m-s-register7174">
+                    <img src="~/Content/CSS/registerAccount/imgs/theinteriorhasaarmchaironemptywhitewallbackground3drendering17175-htqc-1600w.png"
+                         alt="theinteriorhasaarmchaironemptywhitewallbackground3drendering17175"
+                         class="b-u-h-m-s-register7174-image" />
+
+                    <img src="~/Content/CSS/registerAccount/imgs/theinteriorhasaarmchaironemptywhitewallbackground3drendering27176-xpbe-1800w.png"
+                         alt="theinteriorhasaarmchaironemptywhitewallbackground3drendering27176"
+                         class="b-u-h-m-s-register7174-image01" />
+
+                    <div class="b-u-h-m-s-register7174-group627177">
+                        <span class="b-u-h-m-s-register7174-text">
+                            <span class="b-u-h-m-s-register7174-text01">
+
+                            </span>
+                        </span>
+                        <div class="b-u-h-m-s-register7174-group497179">
+                            <span class="b-u-h-m-s-register7174-text02">
+                                <span class="b-u-h-m-s-register7174-text03">
+                                    Welcome to BUHMS
+                                </span>
+                            </span>
+                        </div>
+                        <span class="b-u-h-m-s-register7174-text04">
+                            <span class="b-u-h-m-s-register7174-text05">
+                                Register a Student
+                            </span>
+                        </span>
+                        <span class="b-u-h-m-s-register7174-text06">
+                            <span class="b-u-h-m-s-register7174-text07">
+                                Enter Student Firstname
+                            </span>
+                        </span>
+                    </div>
+                    <img src="~/Content/CSS/registerAccount/imgs/bulogo27189-h6ts-200w.png"
+                         alt="BULOGO27189"
+                         class="b-u-h-m-s-register7174-image02" />
 
 
 
-    <div class="main">
+
+                    @*<div class="b-u-h-m-s-register7174-group567183">
+                        <span class="b-u-h-m-s-register7174-text08">
+                            
+
+                        </span>
+                    </div>*@
+                    
+                    <div class="b-u-h-m-s-register7174-group638819">
+                        <span class="b-u-h-m-s-register7174-text10">
+                            <span class="b-u-h-m-s-register7174-text11">
+                                Confirm Password
+                            </span>
+                        </span>
+                        <span class="b-u-h-m-s-register7174-text12">
+                            <span class="b-u-h-m-s-register7174-text13">
+                                Enter Student’s Gender
+                            </span>
+                        </span>
+                        <span class="b-u-h-m-s-register7174-text14">
+                            <span class="b-u-h-m-s-register7174-text15">Enter Password</span>
+                        </span>
+                        <span class="b-u-h-m-s-register7174-text16">
+                            <span class="b-u-h-m-s-register7174-text17">
+                                Enter Student’s Study Level
+                            </span>
+                        </span>
+                        <span class="b-u-h-m-s-register7174-text18">
+                            <span class="b-u-h-m-s-register7174-text19">
+                                Enter Student Course of Study
+                            </span>
+                        </span>
+                        <span class="b-u-h-m-s-register7174-text20">
+                            <span class="b-u-h-m-s-register7174-text21">
+                                Enter Student Lastname
+                            </span>
+                        </span>
+                        <span class="b-u-h-m-s-register7174-text22">
+                            <span class="b-u-h-m-s-register7174-text23">
+                                Enter Student Matric Number
+                            </span>
+                        </span>
+
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @placeholder = "Lastname", @class = "b-u-h-m-s-register7174-image04" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
 
 
-        <div class="containerr">
+
+                        @Html.EditorFor(model => model.MatricNo, new { htmlAttributes = new { @placeholder = "Matric Number", @class = "b-u-h-m-s-register7174-image05" } })
+                        @Html.ValidationMessageFor(model => model.MatricNo, "", new { @class = "text-danger" })
+
+
+
+                        @Html.EditorFor(model => model.Course, new { htmlAttributes = new { @placeholder = "Course of Study", @class = "b-u-h-m-s-register7174-image06" } })
+                        @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
+
+
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @placeholder = "Password", @class = "b-u-h-m-s-register7174-image07" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @placeholder = "Confirm Password", @class = "confirmPassword" } })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(BHMS.Models.Gender))), htmlAttributes: new { @class = "b-u-h-m-s-register7174-image08" })
+                            </div>
+                        </div>
+
+
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email", @class = "b-u-h-m-s-register7174-image09" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+
+                        @Html.EditorFor(model => model.Level, new { htmlAttributes = new { @placeholder = "Level", @class = "b-u-h-m-s-register7174-image10" } })
+                        @Html.ValidationMessageFor(model => model.Level, "", new { @class = "text-danger" })
+
+
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @placeholder = "Firstname", @class = "b-u-h-m-s-register7174-image11" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+                        <input type="file" id="file" name="file" class="passPort" />
+                        <input type="submit" class="btnSubmit" value="Register" />
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</body>
+
+
+
+@*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { encType = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <h2>Registration Form</h2>
             <div class="form-group-1">
@@ -37,6 +267,14 @@
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Passport, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" id="file" name="file" class="btn btn-default" />
+
+                    </div>
+                </div>
+
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @placeholder = "Password" } })
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
@@ -48,28 +286,29 @@
                         @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(BHMS.Models.Gender))))
                     </div>
                 </div>
-               
-
-                @*<div class="select-list">
-            <select name="course_type" id="course_type">
-                <option slected value="">Course of Study</option>
-                <option value="society">Society</option>
-                <option value="language">Language</option>
-            </select>
-        </div>*@
-            </div>
-                    <div class="form-check">
-                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
-                    </div>
-                    <div class="form-submit">
-                        <input type="submit" class="submit" value="Sign-up" />
-                    </div>
-                </div>
 
 
+<div class="select-list">
+        <select name="course_type" id="course_type">
+            <option slected value="">Course of Study</option>
+            <option value="society">Society</option>
+            <option value="language">Language</option>
+        </select>
     </div>
-}
+
+        <div class="form-check">
+                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" class="submit" value="Sign-up" />
+                </div>
+            </div>
+
+
+        </div>
+
+    }*@
 
 <!-- JS -->
 <script src="~/assets/regPage/vendor/jquery/jquery.min.js"></script>

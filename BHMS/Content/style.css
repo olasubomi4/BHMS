@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   height: 60px;
 }
 #header .logo h1 {
-  font-size: 28px;
+  font-size: 30px;
   margin: 0;
   padding: 4px 0;
   line-height: 1;
@@ -83,10 +83,11 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-#header .logo h1 a, #header .logo h1 a:hover {
-  color: #fff;
-  text-decoration: none;
-}
+    #header .logo h1 a, #header .logo h1 a:hover {
+        color: #fff;
+        text-shadow: 1px 0 0 #4fa6d5, 0 -1px 0 #4fa6d5, 0 1px 0 #4fa6d5, -1px 0 0 #4fa6d5;
+        text-decoration: none;
+    }
 #header .logo img {
   padding: 0;
   margin: 0;
@@ -116,17 +117,18 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 .navbar li {
   position: relative;
 }
-.navbar a, .navbar a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0 10px 30px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  color: #fff;
-  white-space: nowrap;
-  transition: 0.3s;
-}
+    .navbar a, .navbar a:focus {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0 10px 30px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        color: #fff;
+        text-shadow: 1px 0 0 #4fa6d5, 0 -0.9px 0 #4fa6d5, 0 0.9px 0 #4fa6d5, -1px 0 0 #4fa6d5;
+        white-space: nowrap;
+        transition: 0.3s;
+    }
 .navbar a i, .navbar a:focus i {
   font-size: 12px;
   line-height: 0;
@@ -468,7 +470,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 0px 0;
 }
 
 .section-bg {

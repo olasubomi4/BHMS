@@ -1,0 +1,285 @@
+﻿@model BHMS.CORE.Models.Hostel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<head>
+    <title>exported project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/deleteHostel/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/deleteHostel/deletehostel197278.css" rel="stylesheet" />
+
+        <div class="deletehostel197278-container">
+            <div class="deletehostel197278-deletehostel197278">
+
+                <img src="~/Content/CSS/deleteHostel/img/bulogo3197298-u5ss-200w.png"
+                     alt="BULOGO3197298"
+                     class="deletehostel197278-image1" />
+
+                <img src="~/Content/CSS/deleteHostel/img/rectangle51197279-7fxc-800h.png"
+                     alt="Rectangle51197279"
+                     class="deletehostel197278-image" />
+
+
+                <img alt="Line7197280"
+                     src="public/playground_assets/line7197280-l93.svg"
+                     class="deletehostel197278-svg" />
+                <span class="deletehostel197278-text">
+                    <span class="deletehostel197278-text01">Hostel Category:</span>
+                    <span class="deletehostel197278-text02">@Html.DisplayFor(model => model.HostelCategory)</span>
+                </span>
+                <span class="deletehostel197278-text03">
+                    <span class="deletehostel197278-text04">Hostel Gender:</span>
+                    <span class="deletehostel197278-text05">@Html.DisplayFor(model => model.Gender)</span>
+                </span>
+                <img alt="Line6197283"
+                     src="public/playground_assets/line6197283-k68.svg"
+                     class="deletehostel197278-svg1" />
+                <span class="deletehostel197278-text06">
+                    <span class="deletehostel197278-text07">Hostel Capacity:</span>
+                    <span class="deletehostel197278-text08">@Html.DisplayFor(model => model.Capacity)</span>
+                </span>
+                <img alt="Line5197285"
+                     src="public/playground_assets/line5197285-fs2.svg"
+                     class="deletehostel197278-svg2" />
+                <img alt="Line3197286"
+                     src="public/playground_assets/line3197286-bat.svg"
+                     class="deletehostel197278-svg3" />
+                <img alt="Line8197287"
+                     src="public/playground_assets/line8197287-tc8o.svg"
+                     class="deletehostel197278-svg4" />
+                <span class="deletehostel197278-text09">
+                    <span class="deletehostel197278-text10">Hall Admin:</span>
+                    <span class="deletehostel197278-text11">@Html.DisplayFor(model => model.Halladmin)</span>
+                </span>
+                <img alt="Line4197289"
+                     src="public/playground_assets/line4197289-t1ue.svg"
+                     class="deletehostel197278-svg5" />
+
+                <span class="deletehostel197278-text16">
+                    <span class="deletehostel197278-text17">
+                        Are you sure you want to delete this Hostel?
+                    </span>
+                </span>
+                <span class="deletehostel197278-text18">
+                    <span class="deletehostel197278-text19">Hostel Name:</span>
+                    <span class="deletehostel197278-text20">@Html.DisplayFor(model => model.Hostelname)</span>
+                </span>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <input type="submit" value="Delete" class="deletehostel197278-group70197294" />
+
+                }
+
+                <span class="deletehostel197278-text23">
+                    <span class="deletehostel197278-text24">@Html.ActionLink("Back to List", "Index")</span>
+                </span>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+@*<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Hostel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hostelname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hostelname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Availablespace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Availablespace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Halladmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Halladmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostelImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostelImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostelCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostelCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hostelblocks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hostelblocks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Roomsperblock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roomsperblock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>*@

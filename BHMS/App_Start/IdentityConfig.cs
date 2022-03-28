@@ -17,6 +17,7 @@ using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
 using System.Diagnostics;
 using BHMS.Models;
+using System.Net;
 
 namespace BHMS
 {
@@ -40,6 +41,10 @@ namespace BHMS
             var fromNumber = ConfigurationManager.AppSettings["SMSAccountFrom"];
 
             TwilioClient.Init(accountSid, authToken);
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+                                                | SecurityProtocolType.Tls11
+                                                | SecurityProtocolType.Tls12
+                                                | SecurityProtocolType.Ssl3;
 
             MessageResource result = MessageResource.Create(
             new PhoneNumber(message.Destination),

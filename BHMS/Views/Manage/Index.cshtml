@@ -3,17 +3,264 @@
     ViewBag.Title = "Manage";
 }
 
+
+<head>
+    <title>exported project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+    <style>
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" />
+    <link rel="stylesheet" href="~/Content/CSS/manage/style.css" />
+</head>
+<body>
+    <div>
+        <link href="~/Content/CSS/manage/manage19416.css" rel="stylesheet" />
+
+        <div class="manage19416-container">
+            <div class="manage19416-manage19416">
+
+                @*logo*@
+                <img src="~/Content/CSS/manage/imgs/bulogo319418-b4q-200w.png"
+                     alt="BULOGO319418"
+                     class="manage19416-image2" />
+
+                <img src="~/Content/CSS/manage/imgs/rectangle5119417-vcwf-800h.png"
+                     alt="Rectangle5119417"
+                     class="manage19416-image" />
+
+
+                <div class="manage19416-dropdown19786">
+                    <nav id="navbar" class="navbar">
+                        <ul>
+
+                            <li class="dropdown">
+                                <a href="#"><span style="color: black">Options</span> <i class="bi bi-chevron-down" style="color:black"></i></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Item Registration", "Create", "ItemManager")</li>
+
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>@Html.ActionLink("Create & Assign Roles", "Index", "Role")</li>
+                                        <li>@Html.ActionLink("Create & Delete Item Category", "Index", "ItemCategoryManager")</li>
+                                        <li>@Html.ActionLink("Create & Delete Hostels", "Index", "Hostel")</li>
+
+                                        <li>@Html.ActionLink("View Registered Students", "StudentsThatAreSignedUp", "Admin")</li>
+                                        <li>@Html.ActionLink("View Students Complaints", "Index", "UserComplaint")</li>
+                                        <li>@Html.ActionLink("Make a Complaint", "Create", "UserComplaint")</li>
+
+                                        <li>@Html.ActionLink("Upload Video to Cloud", "UploadVideo", "VideoUpload")</li>
+                                        <li>@Html.ActionLink("Use Object Detector", "Index", "ObjectDetector")</li>
+
+
+                                    }
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+
+                    @*<button class="manage19416-button-i1978616">
+            <span class="manage19416-text">
+                <span class="manage19416-text01">Pick an item category</span>
+            </span>
+            <div class="manage19416-icon-i1978618">
+                <img src="public/playground_assets/groupi1978619-18ha.svg"
+                     alt="GroupI1978619"
+                     class="manage19416-image1" />
+            </div>
+        </button>*@
+                </div>
+                <span class="manage19416-text02">
+                    <span class="manage19416-text03">
+                        @if (Model.HasPassword)
+                        {
+                            @Html.ActionLink("Change your password", "ChangePassword")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Create", "SetPassword")
+                        }
+                    </span>
+                </span>
+
+                <span class="manage19416-text04">
+                    <span class="manage19416-text05">
+                        @Model.Logins.Count [
+                        @Html.ActionLink("Manage", "ManageLogins") ]
+                    </span>
+                </span>
+
+                <span class="manage19416-text06">
+                    <span class="manage19416-text07">
+                        @(Model.PhoneNumber ?? "None") [
+                        @if (Model.PhoneNumber != null)
+                        {
+                            @Html.ActionLink("Change", "AddPhoneNumber")
+                            @: &nbsp;|&nbsp;
+                            @Html.ActionLink("Remove", "RemovePhoneNumber")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Add", "AddPhoneNumber")
+                        }
+                        ]
+                    </span>
+                </span>
+                <span class="manage19416-text08">
+                    @if (Model.TwoFactor)
+                    {
+                        using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <text>Enabled
+                                <input type="submit" value="Disable" class="enableLink" />
+                            </text>
+                        }
+                    }
+                    else
+                    {
+                        using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <text>Disabled
+                                <input type="submit" value="Enable" class="btn btn-link" />
+                            </text>
+                        }
+                    }
+                </span>
+                <span class="manage19416-text11">
+                    <span class="manage19416-text12">External Login</span>
+                </span>
+                <span class="manage19416-text13">
+                    <span class="manage19416-text14">Phone Number</span>
+                </span>
+                <span class="manage19416-text15">
+                    <span class="manage19416-text16">Two-Factor Authentication</span>
+                </span>
+                <span class="manage19416-text17">
+                    <span class="manage19416-text18">BHMS Options</span>
+                </span>
+
+
+                <img alt="Line319419"
+                     src="public/playground_assets/line319419-ot5.svg"
+                     class="manage19416-svg" />
+                <span class="manage19416-text21">
+                    <span class="manage19416-text22">Manage</span>
+                </span>
+                <span class="manage19416-text23">
+                    <span class="manage19416-text24">Change your account settings</span>
+                </span>
+                <span class="manage19416-text25">
+                    <span class="manage19416-text26">Password</span>
+                </span>
+                @*<img alt="Line419432"
+                     src="public/playground_assets/line419432-ngz.svg"
+                     class="manage19416-svg1" />
+                <img alt="Line519433"
+                     src="public/playground_assets/line519433-5z49.svg"
+                     class="manage19416-svg2" />
+                <img alt="Line619434"
+                     src="public/playground_assets/line619434-24uh.svg"
+                     class="manage19416-svg3" />
+                <img alt="Line719436"
+                     src="public/playground_assets/line719436-dave.svg"
+                     class="manage19416-svg4" />*@
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
 <style>
     @*body{
         background-color:aqua;
     }*@
 </style>
 
-<br /><br /><br /><br />
 
-
-
-<h2>@ViewBag.Title.</h2>
+<!--<h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
@@ -37,7 +284,7 @@
         <dd>
             @Model.Logins.Count [
             @Html.ActionLink("Manage", "ManageLogins") ]
-        </dd>
+        </dd>-->
         @*
             Phone Numbers can used as a second factor of verification in a two-factor authentication system.
 
@@ -47,7 +294,7 @@
              Uncomment the following block after you have set up two-factor authentication
         *@
 
-        <dt>Phone Number:</dt>
+        <!--<dt>Phone Number:</dt>
         <dd>
             @(Model.PhoneNumber ?? "None") [
             @if (Model.PhoneNumber != null)
@@ -97,26 +344,27 @@
                             <ul>
                                 <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
                                 <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
+                                <li>@Html.ActionLink("View Complaints", "Index", "UserComplaint")</li>
 
                                 @if (User.IsInRole("Admin"))
                                 {
-                                <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
-                                <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
-                                <li>@Html.ActionLink("View Role", "Index", "Role")</li>
-                                <li>@Html.ActionLink("Assign role", "RegisterRole", "Account")</li>
-                                <li>@Html.ActionLink("Create Role", "Create", "Role")</li>
-                                <li>@Html.ActionLink("Roles", "Index", "Role")</li>
+                                    <li>@Html.ActionLink("Item", "index", "ItemManager")</li>
+                                    <li>@Html.ActionLink("Item Category", "Index", "ItemCategoryManager")</li>
+                                    <li>@Html.ActionLink("View Role", "Index", "Role")</li>
+                                    <li>@Html.ActionLink("Assign role", "RegisterRole", "Account")</li>
+                                    <li>@Html.ActionLink("Create Role", "Create", "Role")</li>
+                                    <li>@Html.ActionLink("Roles", "Index", "Role")</li>
 
-                                <li class="dropdown">
-                                    <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Deep Drop Down 1</a></li>
-                                        <li><a href="#">Deep Drop Down 2</a></li>
-                                        <li><a href="#">Deep Drop Down 3</a></li>
-                                        <li><a href="#">Deep Drop Down 4</a></li>
-                                        <li><a href="#">Deep Drop Down 5</a></li>
-                                    </ul>
-                                </li>
+                                    <li class="dropdown">
+                                        <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Deep Drop Down 1</a></li>
+                                            <li><a href="#">Deep Drop Down 2</a></li>
+                                            <li><a href="#">Deep Drop Down 3</a></li>
+                                            <li><a href="#">Deep Drop Down 4</a></li>
+                                            <li><a href="#">Deep Drop Down 5</a></li>
+                                        </ul>
+                                    </li>
                                 }
                             </ul>
                         </li>
@@ -127,52 +375,8 @@
 
         }
     </dl>
-    What is Lorem Ipsum?
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-    Why do we use it?
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-
-    Where does it come from?
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-
-    Where can I get some?
-    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-
-    5
-    paragraphs
-    words
-    bytes
-    lists
-    Start with 'Lorem
-    ipsum dolor sit amet...'
-
-    Translations: Can you help translate this site into a foreign language ? Please email us with details if you can help.
-    There is a set of mock banners available here in three colours and in a range of standard banner sizes:
-    BannersBannersBanners
-    Donate: If you use this site regularly and would like to help keep the site on the Internet, please consider donating a small sum to help pay for the hosting and bandwidth bill. There is no minimum donation, any sum is appreciated - click here to donate using PayPal. Thank you for your support.
-    Donate Bitcoin: 16UQLq1HZ3CNwhvgrarV6pMoA2CDjb4tyF
-    NodeJS Python Interface GTK Lipsum Rails .NET Groovy
-
-    The standard Lorem Ipsum passage, used since the 1500s
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-
-    1914 translation by H. Rackham
-    "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-
-    Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
-
-    1914 translation by H. Rackham
-    "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
 </div>
 
 
 
-@Html.ActionLink("Upload Video", "UploadVideo", "VideoUpload")
+@Html.ActionLink("Upload Video", "UploadVideo", "VideoUpload")-->

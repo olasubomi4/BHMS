@@ -1,0 +1,472 @@
+.male-hall-selection4290-container {
+ /* min-height: 100vh;*/
+}
+.male-hall-selection4290-male-hall-selection4290 {
+  /*width: 1440px;*/
+  height: 900px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  /*max-width: 1440px;*/
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+}
+
+.bg-images {
+    /*width: 1440px;*/
+    height:100%;
+    display: flex;
+    overflow: hidden;
+    /*position: relative;*/
+    /*max-width: 1440px;*/
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    /*background-image: url("imgs/492a81af-8c19-4d2b-83c7-ff0fa31a9583-6kxj-1500w.png");*/
+}
+
+
+.male-hall-selection4290-image {
+  top: 21px;
+  left: 18px;
+  width: 103px;
+  height: 119px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+}
+
+.male-hall-selection4290-image1 {
+  top: 100px;
+  left: 663px;
+  width: 700px;
+  height: 654px;
+  position: absolute;
+  object-fit: cover;
+  border-color: transparent;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.75);
+  background-size: cover;
+}
+
+.male-hall-selection4290-text {
+  top: 490px;
+  left: 973px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.male-hall-selection4290-text01 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.male-hall-selection4290-text02 {
+  top: 427px;
+  left: 685px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text03 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text07 {
+  top: 138px;
+  left: 860px;
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  position: absolute;
+  font-size: 48px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text08 {
+  color: rgba(3, 0, 103, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-group5750147 {
+  top: 634px;
+  left: 1071px;
+  width: 195px;
+  height: 44.744937896728516px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+}
+.male-hall-selection4290-image2 {
+    color: #fff;
+    top: 0px;
+    left: -110px;
+    width: 120px;
+    height: 45px;
+    position: absolute;
+    box-shadow: 0px 4px 19px 0px rgba(119, 147, 65, 0.30000001192092896);
+    object-fit: cover;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    background-color: rgba(3, 0, 103, 1);
+}
+.deleteBtn {
+
+    color: #fff;
+    top: 0px;
+    left: 50px;
+    width: 120px;
+    height: 45px;
+    position: absolute;
+    box-shadow: 0px 4px 19px 0px rgba(119, 147, 65, 0.30000001192092896);
+    object-fit: cover;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    background-color: rgba(3, 0, 103, 1);
+}
+.male-hall-selection4290-text09 {
+
+  top: 11.63427734375px;
+  left: 68.50836181640625px;
+  color: rgba(255, 255, 255, 1);
+  width: 59px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text10 {
+  color: rgba(255, 255, 255, 1);
+  width: 59px;
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-weight: 500px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-group648836 {
+    top: 254px;
+    left: 907px;
+    width: 155px;
+    height: 126px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: rgba(3, 0, 103, 1);
+}
+.male-hall-selection4290-text11 {
+  top: 65px;
+  left: 42px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text12 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text13 {
+  top: 27px;
+  left: 23px;
+  color: rgba(127, 127, 127, 1);
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text14 {
+  color: rgba(127, 127, 127, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-group658837 {
+    top: 254px;
+    left: 1111px;
+    width: 155px;
+    height: 126px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: rgba(3, 0, 103, 1);
+}
+.male-hall-selection4290-text15 {
+  top: 69px;
+  left: 50px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text16 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text17 {
+  top: 9px;
+  left: 18px;
+  color: rgba(127, 127, 127, 1);
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text18 {
+  color: rgba(127, 127, 127, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-group668838 {
+    top: 427px;
+    left: 907px;
+    width: 155px;
+    height: 126px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: rgba(3, 0, 103, 1);
+}
+.male-hall-selection4290-text22 {
+  top: 63px;
+  left: 66px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text23 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text24 {
+  top: 16px;
+  left: 37px;
+  color: rgba(127, 127, 127, 1);
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text25 {
+  color: rgba(127, 127, 127, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-group678839 {
+    top: 427px;
+    left: 1111px;
+    width: 155px;
+    height: 126px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: rgba(3, 0, 103, 1);
+}
+.male-hall-selection4290-text29 {
+  top: 63px;
+  left: 54px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text30 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text31 {
+  top: 7px;
+  left: 11px;
+  color: rgba(127, 127, 127, 1);
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 600px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.male-hall-selection4290-text32 {
+  color: rgba(127, 127, 127, 1);
+  height: auto;
+  align-self: auto;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600px;
+  font-stretch: normal;
+  text-decoration: none;
+}
